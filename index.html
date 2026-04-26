@@ -7,10 +7,9 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;background:#f5f5f0;min-height:100vh;color:#1a1a1a}
-.screen{display:none}
-.screen.active{display:block}
+.screen{display:none}.screen.active{display:block}
 
-/* ── 登录 ── */
+/* 登录 */
 .login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem 1rem;background:#f5f5f0}
 .login-card{background:#fff;border:0.5px solid rgba(0,0,0,.1);border-radius:12px;padding:2rem 2rem 1.75rem;width:100%;max-width:390px}
 .login-logo{display:flex;align-items:center;gap:10px;margin-bottom:1.75rem}
@@ -22,8 +21,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Micr
 .form-group label{display:block;font-size:12px;font-weight:500;color:#666;margin-bottom:5px}
 .form-group input{width:100%;height:38px;padding:0 12px;border:0.5px solid rgba(0,0,0,.15);border-radius:8px;background:#f7f7f5;color:#1a1a1a;font-size:14px;font-family:inherit;outline:none;transition:border-color .15s}
 .form-group input:focus{border-color:#1a56db;background:#fff}
-.pw-wrap{position:relative}
-.pw-wrap input{padding-right:40px}
+.pw-wrap{position:relative}.pw-wrap input{padding-right:40px}
 .pw-toggle{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;padding:4px;color:#999;display:flex;align-items:center}
 .pw-toggle svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
 .login-error{background:#fef2f2;color:#b91c1c;border:0.5px solid #fca5a5;border-radius:8px;padding:8px 12px;font-size:13px;margin-bottom:14px;display:none}
@@ -32,7 +30,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Micr
 .login-hint{text-align:center;font-size:12px;color:#bbb;margin-top:1.25rem;padding-top:1.25rem;border-top:0.5px solid rgba(0,0,0,.08)}
 .login-hint span{color:#888}
 
-/* ── 顶栏 ── */
+/* 顶栏 */
 .top-bar{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.5rem;background:#fff;border-bottom:0.5px solid rgba(0,0,0,.08);position:sticky;top:0;z-index:50}
 .top-logo{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:500;color:#1a1a1a}
 .top-logo-icon{width:28px;height:28px;background:#e8f0fb;border-radius:6px;display:flex;align-items:center;justify-content:center}
@@ -43,7 +41,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Micr
 .logout-btn{height:28px;padding:0 10px;border-radius:8px;border:0.5px solid rgba(0,0,0,.15);background:transparent;cursor:pointer;font-size:12px;color:#666;font-family:inherit}
 .logout-btn:hover{background:#f5f5f0}
 
-/* ── 内容区 ── */
+/* 内容区 */
 .content{padding:1.5rem;max-width:1200px;margin:0 auto}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:1.5rem}
 @media(max-width:600px){.stats{grid-template-columns:repeat(2,1fr)}}
@@ -51,31 +49,29 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Micr
 .stat-label{font-size:12px;color:#888;margin-bottom:4px}
 .stat-val{font-size:22px;font-weight:500;color:#1a1a1a}
 
-/* ── 标签页 ── */
+/* 标签页 */
 .tabs{display:flex;gap:4px;background:#f0eeea;border-radius:8px;padding:4px;margin-bottom:1.5rem;width:fit-content;flex-wrap:wrap}
 .tab{padding:6px 16px;border-radius:6px;border:none;background:transparent;cursor:pointer;font-size:13px;color:#888;font-family:inherit;white-space:nowrap}
 .tab.active{background:#fff;color:#1a1a1a;font-weight:500;border:0.5px solid rgba(0,0,0,.1)}
-.panel{display:none}
-.panel.active{display:block}
+.panel{display:none}.panel.active{display:block}
 .card{background:#fff;border:0.5px solid rgba(0,0,0,.08);border-radius:12px;padding:1.25rem}
 
-/* ── 按钮 ── */
+/* 按钮 */
 .btn{height:34px;padding:0 14px;border-radius:8px;border:0.5px solid rgba(0,0,0,.15);background:transparent;cursor:pointer;font-size:13px;color:#1a1a1a;white-space:nowrap;font-family:inherit;transition:background .12s}
 .btn:hover{background:#f5f5f0}
 .btn.primary{background:#1a56db;border-color:transparent;color:#fff;font-weight:500}
 .btn.primary:hover{opacity:.9}
-.btn.danger{color:#b91c1c;border-color:#fca5a5}
-.btn.danger:hover{background:#fef2f2}
+.btn.danger{color:#b91c1c;border-color:#fca5a5}.btn.danger:hover{background:#fef2f2}
 .btn.sm{height:26px;padding:0 8px;font-size:11px}
-.btn.warning{background:#fffbeb;border-color:#fde68a;color:#92400e}
-.btn.warning:hover{background:#fef9c3}
+.btn.warning{background:#fffbeb;border-color:#fde68a;color:#92400e}.btn.warning:hover{background:#fef9c3}
+.btn:disabled{opacity:.45;cursor:not-allowed}
 
-/* ── 工具栏 ── */
+/* 工具栏 */
 .toolbar{display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap;align-items:center}
 .toolbar input[type=text],.toolbar select{height:34px;font-size:13px;padding:0 10px;border:0.5px solid rgba(0,0,0,.12);border-radius:8px;background:#f7f7f5;color:#1a1a1a;outline:none;font-family:inherit}
 .toolbar input[type=text]{min-width:180px;flex:1}
 
-/* ── 表格 ── */
+/* 表格 */
 .tbl-wrap{overflow-x:auto}
 table{width:100%;border-collapse:collapse;font-size:13px;min-width:720px}
 thead tr{border-bottom:0.5px solid rgba(0,0,0,.08)}
@@ -90,65 +86,112 @@ tbody tr:hover td{background:#fafaf8}
 .badge-tagged{background:#e8f0fb;color:#1a56db}
 .empty{text-align:center;padding:3rem;color:#bbb;font-size:14px}
 
-/* ── 分页 ── */
+/* 分页 */
 .pagination{display:flex;gap:6px;justify-content:flex-end;margin-top:1rem;align-items:center;flex-wrap:wrap}
 .page-btn{width:28px;height:28px;border-radius:8px;border:0.5px solid rgba(0,0,0,.12);background:transparent;cursor:pointer;font-size:12px;color:#888;font-family:inherit}
 .page-btn.active{background:#1a56db;border-color:transparent;color:#fff;font-weight:500}
 .page-btn:disabled{opacity:.4;cursor:not-allowed}
 .page-info{font-size:12px;color:#888;margin:0 4px}
 
-/* ── 弹窗 ── */
+/* 弹窗 */
 .modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.45);display:none;align-items:flex-start;justify-content:center;z-index:200;padding:2rem 1rem;overflow-y:auto}
 .modal-overlay.show{display:flex}
 .modal{background:#fff;border-radius:12px;border:0.5px solid rgba(0,0,0,.1);padding:1.5rem;width:100%;max-width:560px;margin:auto}
 .modal h3{font-size:16px;font-weight:500;margin-bottom:1.25rem;color:#1a1a1a}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:500px){.form-grid{grid-template-columns:1fr}}
-.fg{display:flex;flex-direction:column;gap:4px}
-.fg.full{grid-column:1/-1}
+.fg{display:flex;flex-direction:column;gap:4px}.fg.full{grid-column:1/-1}
 .fg label{font-size:12px;color:#666;font-weight:500}
 .fg input,.fg select,.fg textarea{padding:8px 10px;border:0.5px solid rgba(0,0,0,.12);border-radius:8px;background:#f7f7f5;color:#1a1a1a;font-size:13px;font-family:inherit;outline:none;transition:border-color .15s}
 .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:#1a56db;background:#fff}
 .fg textarea{resize:vertical;min-height:60px}
 .modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:1.25rem}
 
-/* ── 扫描 ── */
+/* 扫描 */
 .scan-area{border:1px dashed rgba(0,0,0,.15);border-radius:12px;padding:1.5rem;text-align:center;margin-bottom:1rem;background:#f7f7f5}
 .scan-input-row{display:flex;gap:8px;margin-bottom:1rem}
 .scan-input-row input{flex:1;height:40px;font-size:15px;padding:0 12px;border:0.5px solid rgba(0,0,0,.12);border-radius:8px;background:#f7f7f5;color:#1a1a1a;outline:none;font-family:monospace}
 .scan-input-row input:focus{border-color:#1a56db;background:#fff}
 .scan-log{background:#f7f7f5;border-radius:8px;padding:1rem;max-height:220px;overflow-y:auto;font-size:12px;font-family:monospace}
 .log-entry{padding:4px 0;border-bottom:0.5px solid rgba(0,0,0,.06);color:#888}
-.log-entry.ok{color:#15803d}
-.log-entry.err{color:#b91c1c}
+.log-entry.ok{color:#15803d}.log-entry.err{color:#b91c1c}
 .scan-result-card{background:#fff;border:0.5px solid rgba(0,0,0,.08);border-radius:12px;padding:1.25rem;margin-top:1rem;display:none}
 .section-title{font-size:14px;font-weight:500;color:#1a1a1a;margin-bottom:.75rem}
 
-/* ── 报表 ── */
+/* 报表 */
 .report-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 @media(max-width:600px){.report-grid{grid-template-columns:1fr}}
 
-/* ── 用户 ── */
+/* 用户 */
 .role-badge{display:inline-block;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:500;background:#e8f0fb;color:#1a56db}
 .role-badge.admin{background:#fef9c3;color:#a16207}
 
-/* ── 批量导入 ── */
+/* 平面图 */
+.fp-layout{display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-start}
+.fp-canvas-col{flex:1;min-width:300px}.fp-list-col{width:260px;flex-shrink:0}
+@media(max-width:700px){.fp-list-col{width:100%}}
+.upload-zone{border:1.5px dashed rgba(0,0,0,.2);border-radius:12px;padding:3rem 1rem;text-align:center;background:#fafaf8;cursor:pointer;transition:border-color .2s,background .2s}
+.upload-zone:hover,.upload-zone.drag-over{border-color:#1a56db;background:#f0f4ff}
+.upload-zone svg{width:36px;height:36px;stroke:#ccc;fill:none;stroke-width:1.5;margin-bottom:12px}
+.upload-zone p{font-size:13px;color:#888;margin-bottom:4px}
+.upload-zone small{font-size:12px;color:#bbb}
+.canvas-card{background:#fff;border:0.5px solid rgba(0,0,0,.08);border-radius:12px;overflow:hidden}
+.canvas-toolbar{display:flex;gap:6px;padding:8px 12px;background:#fafaf8;border-bottom:0.5px solid rgba(0,0,0,.06);align-items:center;flex-wrap:wrap}
+.canvas-toolbar .sep{width:1px;height:20px;background:rgba(0,0,0,.08);margin:0 2px}
+.zoom-label{font-size:11px;color:#bbb;min-width:36px;text-align:right}
+.canvas-wrapper{position:relative;overflow:hidden;background:#f0eeea}
+#floorCanvas{display:block;cursor:crosshair;touch-action:none}
+#floorCanvas.pan{cursor:grab}#floorCanvas.pan:active{cursor:grabbing}
+.pins-layer{position:absolute;top:0;left:0;pointer-events:none;overflow:hidden}
+.pin{position:absolute;transform:translate(-50%,-100%);pointer-events:all;cursor:pointer;transition:transform .15s}
+.pin:hover{transform:translate(-50%,-100%) scale(1.18)}
+.pin-label{position:absolute;top:calc(100% - 4px);left:50%;transform:translateX(-50%);background:rgba(26,26,26,.82);color:#fff;font-size:10px;white-space:nowrap;padding:2px 6px;border-radius:4px;pointer-events:none;max-width:110px;overflow:hidden;text-overflow:ellipsis}
+.pin-tooltip{position:absolute;background:#fff;border:0.5px solid rgba(0,0,0,.12);border-radius:8px;padding:8px 10px;font-size:12px;z-index:10;min-width:150px;display:none;box-shadow:0 4px 16px rgba(0,0,0,.1)}
+.pin-tooltip.show{display:block}
+.pin-tooltip strong{display:block;font-size:13px;margin-bottom:4px;color:#1a1a1a}
+.pin-tooltip span{color:#888;display:block;line-height:1.7}
+.pin-tooltip .del-btn{margin-top:6px;width:100%;height:24px;border:0.5px solid #fca5a5;border-radius:6px;background:transparent;cursor:pointer;font-size:11px;color:#b91c1c;font-family:inherit}
+.pin-tooltip .del-btn:hover{background:#fef2f2}
+.mode-banner{background:#fffbeb;border:0.5px solid #fde68a;border-radius:8px;padding:9px 12px;font-size:13px;color:#92400e;margin-bottom:10px;display:none;align-items:center;gap:8px}
+.mode-banner.show{display:flex}
+.mode-banner button{margin-left:auto;background:none;border:none;cursor:pointer;color:#92400e;font-size:12px;text-decoration:underline;font-family:inherit;flex-shrink:0}
+.fp-asset-panel{max-height:540px;overflow-y:auto}
+.fp-asset-item{display:flex;align-items:center;gap:7px;padding:7px 8px;border-radius:8px;font-size:13px}
+.fp-asset-item:hover{background:#f5f5f0}
+.fp-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.fp-aname{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fp-aid{font-size:11px;color:#bbb;font-family:monospace;flex-shrink:0}
+.fp-tagged-badge{font-size:10px;background:#e8f0fb;color:#1a56db;padding:1px 5px;border-radius:4px;flex-shrink:0}
+.fp-tag-btn{height:22px;padding:0 7px;border-radius:5px;border:0.5px solid rgba(0,0,0,.15);background:transparent;cursor:pointer;font-size:11px;font-family:inherit;flex-shrink:0}
+.fp-tag-btn:hover{background:#fffbeb;border-color:#fde68a;color:#92400e}
+.fp-tag-btn.active-placing{background:#1a56db;border-color:transparent;color:#fff}
+.pick-popup{position:fixed;background:#fff;border:0.5px solid rgba(0,0,0,.12);border-radius:10px;padding:12px;width:230px;z-index:300;box-shadow:0 8px 28px rgba(0,0,0,.15);display:none}
+.pick-popup.show{display:block}
+.pick-popup h4{font-size:13px;font-weight:500;margin-bottom:8px;color:#1a1a1a}
+.pick-popup input{width:100%;height:30px;padding:0 8px;border:0.5px solid rgba(0,0,0,.12);border-radius:6px;font-size:12px;font-family:inherit;outline:none;margin-bottom:6px;background:#f7f7f5;color:#1a1a1a}
+.pick-popup input:focus{border-color:#1a56db}
+.pick-list{max-height:170px;overflow-y:auto}
+.pick-item{padding:6px 8px;border-radius:6px;cursor:pointer;font-size:12px;color:#1a1a1a}
+.pick-item:hover{background:#f0f4ff}
+.pick-item small{display:block;color:#bbb;font-size:10px;font-family:monospace}
+.pick-cancel{width:100%;margin-top:6px;height:28px;border:0.5px solid rgba(0,0,0,.12);border-radius:6px;background:transparent;cursor:pointer;font-size:12px;color:#888;font-family:inherit}
+.pick-cancel:hover{background:#f5f5f0}
+
+/* 批量导入 */
 .import-modal{max-width:660px}
 .import-tabs{display:flex;gap:4px;background:#f0eeea;border-radius:8px;padding:3px;margin-bottom:1.25rem;width:fit-content}
 .import-tab{padding:5px 14px;border-radius:6px;border:none;background:transparent;cursor:pointer;font-size:13px;color:#888;font-family:inherit}
 .import-tab.active{background:#fff;color:#1a1a1a;font-weight:500;border:0.5px solid rgba(0,0,0,.1)}
-.import-panel{display:none}
-.import-panel.active{display:block}
+.import-panel{display:none}.import-panel.active{display:block}
 .import-drop{border:1.5px dashed rgba(0,0,0,.18);border-radius:10px;padding:2rem 1rem;text-align:center;background:#fafaf8;cursor:pointer;transition:border-color .18s,background .18s;margin-bottom:1rem}
 .import-drop:hover,.import-drop.drag-over{border-color:#1a56db;background:#f0f4ff}
 .import-drop svg{width:28px;height:28px;stroke:#ccc;fill:none;stroke-width:1.5;margin-bottom:8px}
 .import-drop p{font-size:13px;color:#888;margin-bottom:3px}
 .import-drop small{font-size:12px;color:#bbb}
-.import-preview{margin-bottom:1rem}
 .import-preview-title{font-size:12px;font-weight:500;color:#666;margin-bottom:6px;display:flex;align-items:center;gap:8px}
-.import-preview-title .count-badge{background:#e8f0fb;color:#1a56db;padding:1px 7px;border-radius:10px;font-size:11px}
-.import-preview-title .err-badge{background:#fee2e2;color:#b91c1c;padding:1px 7px;border-radius:10px;font-size:11px}
-.import-tbl-wrap{max-height:220px;overflow-y:auto;border:0.5px solid rgba(0,0,0,.08);border-radius:8px}
+.count-badge{background:#e8f0fb;color:#1a56db;padding:1px 7px;border-radius:10px;font-size:11px}
+.err-badge{background:#fee2e2;color:#b91c1c;padding:1px 7px;border-radius:10px;font-size:11px}
+.import-tbl-wrap{max-height:220px;overflow-y:auto;border:0.5px solid rgba(0,0,0,.08);border-radius:8px;margin-bottom:1rem}
 .import-tbl-wrap table{min-width:500px;font-size:12px}
 .import-tbl-wrap th{background:#fafaf8;font-size:11px}
 .import-tbl-wrap td{padding:6px 10px}
@@ -156,97 +199,41 @@ tbody tr:hover td{background:#fafaf8}
 .row-err td:first-child{border-left:2px solid #b91c1c}
 .row-err td{color:#b91c1c}
 .err-text{font-size:11px;color:#b91c1c}
-.import-mode-row{display:flex;gap:8px;margin-bottom:1rem;align-items:center}
+.import-mode-row{display:flex;gap:8px;margin-bottom:1rem;align-items:center;flex-wrap:wrap}
 .import-mode-row label{font-size:13px;color:#666;display:flex;align-items:center;gap:5px;cursor:pointer}
 .import-mode-row input[type=radio]{accent-color:#1a56db}
-.tpl-row{display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap}
+.tpl-row{display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap;align-items:center}
 .tpl-btn{height:30px;padding:0 12px;border-radius:7px;border:0.5px solid rgba(0,0,0,.15);background:transparent;cursor:pointer;font-size:12px;color:#1a56db;font-family:inherit}
 .tpl-btn:hover{background:#f0f4ff}
 
-/* ══════════════════════════
-   平面图标注
-══════════════════════════ */
-.fp-layout{display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-start}
-.fp-canvas-col{flex:1;min-width:300px}
-.fp-list-col{width:260px;flex-shrink:0}
-@media(max-width:700px){.fp-list-col{width:100%}}
+/* 加载遮罩 */
+.loading-mask{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(255,255,255,.75);display:none;align-items:center;justify-content:center;z-index:999;flex-direction:column;gap:12px}
+.loading-mask.show{display:flex}
+.loading-spinner{width:32px;height:32px;border:2.5px solid #e8f0fb;border-top-color:#1a56db;border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-text{font-size:13px;color:#888}
 
-/* 上传区 */
-.upload-zone{border:1.5px dashed rgba(0,0,0,.2);border-radius:12px;padding:3rem 1rem;text-align:center;background:#fafaf8;cursor:pointer;transition:border-color .2s,background .2s}
-.upload-zone:hover,.upload-zone.drag-over{border-color:#1a56db;background:#f0f4ff}
-.upload-zone svg{width:36px;height:36px;stroke:#ccc;fill:none;stroke-width:1.5;margin-bottom:12px}
-.upload-zone p{font-size:13px;color:#888;margin-bottom:4px}
-.upload-zone small{font-size:12px;color:#bbb}
+/* 连接状态 */
+.db-status{display:flex;align-items:center;gap:5px;font-size:11px;color:#888;margin-left:8px}
+.db-dot{width:7px;height:7px;border-radius:50%;background:#d1d5db}
+.db-dot.ok{background:#15803d}.db-dot.err{background:#b91c1c}
 
-/* 画布区 */
-.canvas-card{background:#fff;border:0.5px solid rgba(0,0,0,.08);border-radius:12px;overflow:hidden}
-.canvas-toolbar{display:flex;gap:6px;padding:8px 12px;background:#fafaf8;border-bottom:0.5px solid rgba(0,0,0,.06);align-items:center;flex-wrap:wrap}
-.canvas-toolbar .sep{width:1px;height:20px;background:rgba(0,0,0,.08);margin:0 2px}
-.zoom-label{font-size:11px;color:#bbb;min-width:36px;text-align:right}
-.canvas-wrapper{position:relative;overflow:hidden;background:#f0eeea}
-#floorCanvas{display:block;cursor:crosshair;touch-action:none}
-#floorCanvas.pan{cursor:grab}
-#floorCanvas.pan:active{cursor:grabbing}
-
-/* 图钉图层 */
-.pins-layer{position:absolute;top:0;left:0;pointer-events:none;overflow:hidden}
-.pin{position:absolute;transform:translate(-50%,-100%);pointer-events:all;cursor:pointer;transition:transform .15s}
-.pin:hover{transform:translate(-50%,-100%) scale(1.18)}
-.pin-label{position:absolute;top:calc(100% - 4px);left:50%;transform:translateX(-50%);
-  background:rgba(26,26,26,.82);color:#fff;font-size:10px;white-space:nowrap;
-  padding:2px 6px;border-radius:4px;pointer-events:none;max-width:110px;
-  overflow:hidden;text-overflow:ellipsis;backdrop-filter:blur(2px)}
-
-/* tooltip */
-.pin-tooltip{position:absolute;background:#fff;border:0.5px solid rgba(0,0,0,.12);border-radius:8px;
-  padding:8px 10px;font-size:12px;z-index:10;min-width:150px;display:none;
-  box-shadow:0 4px 16px rgba(0,0,0,.1)}
-.pin-tooltip.show{display:block}
-.pin-tooltip strong{display:block;font-size:13px;margin-bottom:4px;color:#1a1a1a}
-.pin-tooltip span{color:#888;display:block;line-height:1.7}
-.pin-tooltip .del-btn{margin-top:6px;width:100%;height:24px;border:0.5px solid #fca5a5;
-  border-radius:6px;background:transparent;cursor:pointer;font-size:11px;color:#b91c1c;font-family:inherit}
-.pin-tooltip .del-btn:hover{background:#fef2f2}
-
-/* 模式提示条 */
-.mode-banner{background:#fffbeb;border:0.5px solid #fde68a;border-radius:8px;padding:9px 12px;
-  font-size:13px;color:#92400e;margin-bottom:10px;display:none;align-items:center;gap:8px}
-.mode-banner.show{display:flex}
-.mode-banner button{margin-left:auto;background:none;border:none;cursor:pointer;
-  color:#92400e;font-size:12px;text-decoration:underline;font-family:inherit;flex-shrink:0}
-
-/* 右侧资产面板 */
-.fp-asset-panel{max-height:540px;overflow-y:auto}
-.fp-asset-item{display:flex;align-items:center;gap:7px;padding:7px 8px;border-radius:8px;font-size:13px;cursor:default}
-.fp-asset-item:hover{background:#f5f5f0}
-.fp-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.fp-aname{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.fp-aid{font-size:11px;color:#bbb;font-family:monospace;flex-shrink:0}
-.fp-tagged-badge{font-size:10px;background:#e8f0fb;color:#1a56db;padding:1px 5px;border-radius:4px;flex-shrink:0}
-.fp-tag-btn{height:22px;padding:0 7px;border-radius:5px;border:0.5px solid rgba(0,0,0,.15);
-  background:transparent;cursor:pointer;font-size:11px;font-family:inherit;flex-shrink:0;white-space:nowrap}
-.fp-tag-btn:hover{background:#fffbeb;border-color:#fde68a;color:#92400e}
-.fp-tag-btn.active-placing{background:#1a56db;border-color:transparent;color:#fff}
-
-/* 点击选择弹窗 */
-.pick-popup{position:fixed;background:#fff;border:0.5px solid rgba(0,0,0,.12);border-radius:10px;
-  padding:12px;width:230px;z-index:300;box-shadow:0 8px 28px rgba(0,0,0,.15);display:none}
-.pick-popup.show{display:block}
-.pick-popup h4{font-size:13px;font-weight:500;margin-bottom:8px;color:#1a1a1a}
-.pick-popup input{width:100%;height:30px;padding:0 8px;border:0.5px solid rgba(0,0,0,.12);
-  border-radius:6px;font-size:12px;font-family:inherit;outline:none;margin-bottom:6px;
-  background:#f7f7f5;color:#1a1a1a}
-.pick-popup input:focus{border-color:#1a56db}
-.pick-list{max-height:170px;overflow-y:auto}
-.pick-item{padding:6px 8px;border-radius:6px;cursor:pointer;font-size:12px;color:#1a1a1a}
-.pick-item:hover{background:#f0f4ff}
-.pick-item small{display:block;color:#bbb;font-size:10px;font-family:monospace}
-.pick-cancel{width:100%;margin-top:6px;height:28px;border:0.5px solid rgba(0,0,0,.12);
-  border-radius:6px;background:transparent;cursor:pointer;font-size:12px;color:#888;font-family:inherit}
-.pick-cancel:hover{background:#f5f5f0}
+/* Toast 提示 */
+.toast{position:fixed;bottom:1.5rem;right:1.5rem;background:#1a1a1a;color:#fff;padding:10px 16px;border-radius:8px;font-size:13px;z-index:999;opacity:0;transform:translateY(8px);transition:all .2s;pointer-events:none}
+.toast.show{opacity:1;transform:translateY(0)}
+.toast.ok{background:#15803d}.toast.err{background:#b91c1c}
 </style>
 </head>
 <body>
+
+<!-- 加载遮罩 -->
+<div class="loading-mask" id="loadingMask">
+  <div class="loading-spinner"></div>
+  <div class="loading-text" id="loadingText">正在连接数据库…</div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
 
 <!-- ════════ 登录 ════════ -->
 <div class="screen active" id="screen-login">
@@ -262,12 +249,10 @@ tbody tr:hover td{background:#fafaf8}
         </div>
       </div>
       <div class="login-error" id="loginError"></div>
-      <div class="form-group">
-        <label>用户名</label>
+      <div class="form-group"><label>用户名</label>
         <input type="text" id="loginUser" placeholder="请输入用户名" onkeydown="if(event.key==='Enter')doLogin()">
       </div>
-      <div class="form-group">
-        <label>密码</label>
+      <div class="form-group"><label>密码</label>
         <div class="pw-wrap">
           <input type="password" id="loginPass" placeholder="请输入密码" onkeydown="if(event.key==='Enter')doLogin()">
           <button class="pw-toggle" onclick="togglePw()">
@@ -275,8 +260,8 @@ tbody tr:hover td{background:#fafaf8}
           </button>
         </div>
       </div>
-      <button class="login-btn" onclick="doLogin()">登 录</button>
-      <div class="login-hint">管理员：<span>admin / admin123</span>&emsp;普通用户：<span>user / user123</span></div>
+      <button class="login-btn" onclick="doLogin()" id="loginBtn">登 录</button>
+      <div class="login-hint">默认账户：<span>admin / admin123</span></div>
     </div>
   </div>
 </div>
@@ -289,6 +274,7 @@ tbody tr:hover td{background:#fafaf8}
         <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
       </div>
       行政资产管理系统
+      <div class="db-status"><div class="db-dot" id="dbDot"></div><span id="dbStatusText">连接中</span></div>
     </div>
     <div class="user-row">
       <div class="user-avatar" id="userAvatar">A</div>
@@ -307,7 +293,7 @@ tbody tr:hover td{background:#fafaf8}
       <button class="tab" id="tabUsers" onclick="switchTab('users',this)" style="display:none">用户管理</button>
     </div>
 
-    <!-- ── 资产列表 ── -->
+    <!-- 资产列表 -->
     <div id="panel-list" class="panel active">
       <div class="card">
         <div class="toolbar">
@@ -315,10 +301,8 @@ tbody tr:hover td{background:#fafaf8}
           <select id="filterCat" onchange="renderTable()"><option value="">全部类别</option></select>
           <select id="filterDept" onchange="renderTable()"><option value="">全部部门</option></select>
           <select id="filterStatus" onchange="renderTable()">
-            <option value="">全部状态</option>
-            <option value="正常">正常</option>
-            <option value="维修中">维修中</option>
-            <option value="已报废">已报废</option>
+            <option value="">全部状态</option><option value="正常">正常</option>
+            <option value="维修中">维修中</option><option value="已报废">已报废</option>
           </select>
           <button class="btn" onclick="exportCSV()">导出 CSV</button>
           <button class="btn" id="btnImport" onclick="openImportModal()">批量导入</button>
@@ -326,10 +310,7 @@ tbody tr:hover td{background:#fafaf8}
         </div>
         <div class="tbl-wrap">
           <table>
-            <thead><tr>
-              <th>资产编号</th><th>名称</th><th>类别</th><th>位置</th>
-              <th>所属人</th><th>所属部门</th><th>状态</th><th>已标注</th><th>操作</th>
-            </tr></thead>
+            <thead><tr><th>资产编号</th><th>名称</th><th>类别</th><th>位置</th><th>所属人</th><th>所属部门</th><th>状态</th><th>已标注</th><th>操作</th></tr></thead>
             <tbody id="tbody"></tbody>
           </table>
         </div>
@@ -338,7 +319,7 @@ tbody tr:hover td{background:#fafaf8}
       </div>
     </div>
 
-    <!-- ── 扫描录入 ── -->
+    <!-- 扫描录入 -->
     <div id="panel-scan" class="panel">
       <div class="card">
         <div class="section-title">扫描器 / RFID 录入</div>
@@ -354,15 +335,12 @@ tbody tr:hover td{background:#fafaf8}
         <div class="scan-log" id="scanLog"><div style="color:#bbb;font-size:12px">等待扫描…</div></div>
       </div>
       <div class="scan-result-card" id="scanResultCard">
-        <div class="section-title">匹配资产</div>
-        <div id="scanResultBody"></div>
+        <div class="section-title">匹配资产</div><div id="scanResultBody"></div>
       </div>
     </div>
 
-    <!-- ── 平面标注 ── -->
+    <!-- 平面标注 -->
     <div id="panel-floorplan" class="panel">
-
-      <!-- 上传区（无图时显示） -->
       <div id="fpUpload" class="upload-zone"
            onclick="document.getElementById('pdfInput').click()"
            ondragover="event.preventDefault();this.classList.add('drag-over')"
@@ -371,23 +349,15 @@ tbody tr:hover td{background:#fafaf8}
         <input type="file" id="pdfInput" accept=".pdf,image/*" style="display:none" onchange="handleFileSelect(event)">
         <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
         <p>点击上传或拖拽平面图到此处</p>
-        <small>支持 PDF（自动渲染第1页）、JPG、PNG · 建议 20MB 以内</small>
+        <small>支持 PDF（渲染第1页）、JPG、PNG · 建议 20MB 以内</small>
       </div>
-
-      <!-- 主界面（有图后显示） -->
       <div id="fpMain" style="display:none">
-
-        <!-- 标注模式提示条 -->
         <div class="mode-banner" id="modeBanner">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
-          </svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           <span id="modeBannerText"></span>
           <button onclick="cancelPlaceMode()">取消</button>
         </div>
-
         <div class="fp-layout">
-          <!-- 左：画布 -->
           <div class="fp-canvas-col">
             <div class="canvas-card">
               <div class="canvas-toolbar">
@@ -406,12 +376,8 @@ tbody tr:hover td{background:#fafaf8}
                 <div class="pin-tooltip" id="pinTooltip"></div>
               </div>
             </div>
-            <p style="font-size:11px;color:#bbb;margin-top:6px;padding-left:4px">
-              左键点击空白处选择资产并打标记 · 悬停图钉查看详情 · 右键图钉可删除标注 · 滚轮缩放
-            </p>
+            <p style="font-size:11px;color:#bbb;margin-top:6px;padding-left:4px">左键点击空白处选择资产打标记 · 悬停图钉查看详情 · 右键图钉删除 · 滚轮缩放</p>
           </div>
-
-          <!-- 右：资产列表 -->
           <div class="fp-list-col">
             <div class="card" style="padding:1rem">
               <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
@@ -419,9 +385,7 @@ tbody tr:hover td{background:#fafaf8}
                 <span style="font-size:11px;color:#bbb" id="fpTagCount"></span>
               </div>
               <input type="text" id="fpSearch" placeholder="搜索资产…" oninput="renderFpList()"
-                style="width:100%;height:30px;padding:0 8px;border:0.5px solid rgba(0,0,0,.12);
-                border-radius:6px;font-size:12px;font-family:inherit;outline:none;
-                background:#f7f7f5;color:#1a1a1a;margin-bottom:8px">
+                style="width:100%;height:30px;padding:0 8px;border:0.5px solid rgba(0,0,0,.12);border-radius:6px;font-size:12px;font-family:inherit;outline:none;background:#f7f7f5;color:#1a1a1a;margin-bottom:8px">
               <div class="fp-asset-panel" id="fpAssetList"></div>
             </div>
           </div>
@@ -429,7 +393,7 @@ tbody tr:hover td{background:#fafaf8}
       </div>
     </div>
 
-    <!-- ── 统计报表 ── -->
+    <!-- 统计报表 -->
     <div id="panel-report" class="panel">
       <div class="report-grid">
         <div class="card"><div class="section-title">按类别分布</div><div id="reportCat"></div></div>
@@ -439,7 +403,7 @@ tbody tr:hover td{background:#fafaf8}
       </div>
     </div>
 
-    <!-- ── 用户管理 ── -->
+    <!-- 用户管理 -->
     <div id="panel-users" class="panel">
       <div class="card">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
@@ -489,11 +453,11 @@ tbody tr:hover td{background:#fafaf8}
   <div class="modal">
     <h3 id="userModalTitle">新增用户</h3>
     <div class="form-grid">
-      <div class="fg"><label>用户名 *</label><input type="text" id="uUsername" placeholder="登录用户名"></div>
-      <div class="fg"><label>姓名</label><input type="text" id="uName" placeholder="真实姓名"></div>
-      <div class="fg"><label>密码 *</label><input type="password" id="uPass" placeholder="登录密码"></div>
+      <div class="fg"><label>用户名 *</label><input type="text" id="uUsername"></div>
+      <div class="fg"><label>姓名</label><input type="text" id="uName"></div>
+      <div class="fg"><label>密码 *</label><input type="password" id="uPass"></div>
       <div class="fg"><label>角色</label><select id="uRole"><option value="user">普通用户</option><option value="admin">管理员</option></select></div>
-      <div class="fg"><label>部门</label><input type="text" id="uDept" placeholder="所属部门"></div>
+      <div class="fg"><label>部门</label><input type="text" id="uDept"></div>
     </div>
     <div class="modal-actions">
       <button class="btn" onclick="closeUserModal()">取消</button>
@@ -502,106 +466,68 @@ tbody tr:hover td{background:#fafaf8}
   </div>
 </div>
 
-<!-- 点击画布 → 选择资产弹窗 -->
-<div class="pick-popup" id="pickPopup">
-  <h4>选择要标记的资产</h4>
-  <input type="text" id="pickSearch" placeholder="搜索资产名称或编号…" oninput="renderPickList()">
-  <div class="pick-list" id="pickList"></div>
-  <button class="pick-cancel" onclick="closePickPopup()">取消</button>
-</div>
-
 <!-- 批量导入弹窗 -->
 <div class="modal-overlay" id="importModalOverlay">
   <div class="modal import-modal">
     <h3>批量导入</h3>
-
-    <!-- 子标签：资产 / 用户 -->
     <div class="import-tabs">
       <button class="import-tab active" id="itab-assets" onclick="switchImportTab('assets')">导入资产</button>
-      <button class="import-tab" id="itab-users"  onclick="switchImportTab('users')">导入用户</button>
+      <button class="import-tab" id="itab-users" onclick="switchImportTab('users')">导入用户</button>
     </div>
-
-    <!-- ── 资产导入 ── -->
     <div class="import-panel active" id="ipanel-assets">
       <div class="tpl-row">
         <span style="font-size:13px;color:#888;line-height:30px">下载模板：</span>
         <button class="tpl-btn" onclick="downloadTpl('assets','csv')">资产模板 CSV</button>
-        <button class="tpl-btn" onclick="downloadTpl('assets','tsv')">资产模板 TSV（Excel可直接打开）</button>
       </div>
-      <div class="import-drop" id="assetDrop"
-           onclick="document.getElementById('assetFileInput').click()"
+      <div class="import-drop" id="assetDrop" onclick="document.getElementById('assetFileInput').click()"
            ondragover="event.preventDefault();this.classList.add('drag-over')"
            ondragleave="this.classList.remove('drag-over')"
            ondrop="this.classList.remove('drag-over');handleImportDrop(event,'assets')">
-        <input type="file" id="assetFileInput" accept=".csv,.tsv,.txt" style="display:none"
-               onchange="handleImportFile(event,'assets')">
+        <input type="file" id="assetFileInput" accept=".csv,.tsv,.txt" style="display:none" onchange="handleImportFile(event,'assets')">
         <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-        <p>点击选择文件或拖拽到此处</p>
-        <small>支持 CSV / TSV 格式，UTF-8 编码，第一行为表头</small>
+        <p>点击选择或拖拽 CSV 文件</p><small>第一行为表头，UTF-8 编码</small>
       </div>
       <div id="assetPreview" style="display:none">
-        <div class="import-preview-title">
-          预览数据
-          <span class="count-badge" id="assetOkCount"></span>
-          <span class="err-badge"  id="assetErrCount" style="display:none"></span>
-        </div>
-        <div class="import-tbl-wrap">
-          <table>
-            <thead><tr>
-              <th>资产编号</th><th>名称</th><th>类别</th><th>位置</th>
-              <th>所属人</th><th>所属部门</th><th>状态</th><th>购入日期</th><th>备注</th>
-            </tr></thead>
-            <tbody id="assetPreviewBody"></tbody>
-          </table>
-        </div>
+        <div class="import-preview-title">预览 <span class="count-badge" id="assetOkCount"></span><span class="err-badge" id="assetErrCount" style="display:none"></span></div>
+        <div class="import-tbl-wrap"><table>
+          <thead><tr><th>编号</th><th>名称</th><th>类别</th><th>位置</th><th>所属人</th><th>部门</th><th>状态</th><th>备注/错误</th></tr></thead>
+          <tbody id="assetPreviewBody"></tbody>
+        </table></div>
       </div>
       <div class="import-mode-row" id="assetModeRow" style="display:none">
         <span style="font-size:13px;color:#666">导入方式：</span>
-        <label><input type="radio" name="assetMode" value="append" checked> 追加（保留现有数据）</label>
-        <label><input type="radio" name="assetMode" value="merge">  合并（相同编号则更新）</label>
-        <label><input type="radio" name="assetMode" value="replace"> 替换（清空后导入）</label>
+        <label><input type="radio" name="assetMode" value="append" checked> 追加</label>
+        <label><input type="radio" name="assetMode" value="merge"> 合并（同编号则更新）</label>
+        <label><input type="radio" name="assetMode" value="replace"> 替换全部</label>
       </div>
     </div>
-
-    <!-- ── 用户导入 ── -->
     <div class="import-panel" id="ipanel-users">
       <div class="tpl-row">
         <span style="font-size:13px;color:#888;line-height:30px">下载模板：</span>
         <button class="tpl-btn" onclick="downloadTpl('users','csv')">用户模板 CSV</button>
-        <button class="tpl-btn" onclick="downloadTpl('users','tsv')">用户模板 TSV（Excel可直接打开）</button>
       </div>
-      <div class="import-drop" id="userDrop"
-           onclick="document.getElementById('userFileInput').click()"
+      <div class="import-drop" id="userDrop" onclick="document.getElementById('userFileInput').click()"
            ondragover="event.preventDefault();this.classList.add('drag-over')"
            ondragleave="this.classList.remove('drag-over')"
            ondrop="this.classList.remove('drag-over');handleImportDrop(event,'users')">
-        <input type="file" id="userFileInput" accept=".csv,.tsv,.txt" style="display:none"
-               onchange="handleImportFile(event,'users')">
+        <input type="file" id="userFileInput" accept=".csv,.tsv,.txt" style="display:none" onchange="handleImportFile(event,'users')">
         <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-        <p>点击选择文件或拖拽到此处</p>
-        <small>支持 CSV / TSV 格式，UTF-8 编码，第一行为表头</small>
+        <p>点击选择或拖拽 CSV 文件</p><small>第一行为表头，UTF-8 编码</small>
       </div>
       <div id="userPreview" style="display:none">
-        <div class="import-preview-title">
-          预览数据
-          <span class="count-badge" id="userOkCount"></span>
-          <span class="err-badge"   id="userErrCount" style="display:none"></span>
-        </div>
-        <div class="import-tbl-wrap">
-          <table>
-            <thead><tr><th>用户名</th><th>姓名</th><th>密码</th><th>角色</th><th>部门</th><th>状态</th></tr></thead>
-            <tbody id="userPreviewBody"></tbody>
-          </table>
-        </div>
+        <div class="import-preview-title">预览 <span class="count-badge" id="userOkCount"></span><span class="err-badge" id="userErrCount" style="display:none"></span></div>
+        <div class="import-tbl-wrap"><table>
+          <thead><tr><th>用户名</th><th>姓名</th><th>密码</th><th>角色</th><th>部门</th><th>状态</th></tr></thead>
+          <tbody id="userPreviewBody"></tbody>
+        </table></div>
       </div>
       <div class="import-mode-row" id="userModeRow" style="display:none">
         <span style="font-size:13px;color:#666">导入方式：</span>
         <label><input type="radio" name="userMode" value="append" checked> 追加</label>
-        <label><input type="radio" name="userMode" value="merge">  合并（相同用户名则更新）</label>
-        <label><input type="radio" name="userMode" value="replace"> 替换</label>
+        <label><input type="radio" name="userMode" value="merge"> 合并</label>
+        <label><input type="radio" name="userMode" value="replace"> 替换全部</label>
       </div>
     </div>
-
     <div class="modal-actions">
       <button class="btn" onclick="closeImportModal()">取消</button>
       <button class="btn primary" id="btnDoImport" onclick="doImport()" disabled>确认导入</button>
@@ -609,34 +535,65 @@ tbody tr:hover td{background:#fafaf8}
   </div>
 </div>
 
-<!-- PDF.js CDN -->
+<!-- 点击画布选资产弹窗 -->
+<div class="pick-popup" id="pickPopup">
+  <h4>选择要标记的资产</h4>
+  <input type="text" id="pickSearch" placeholder="搜索…" oninput="renderPickList()">
+  <div class="pick-list" id="pickList"></div>
+  <button class="pick-cancel" onclick="closePickPopup()">取消</button>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script>
 /* ════════════════════════════
-   存储键
+   Supabase 配置
 ════════════════════════════ */
-const AKEY='adm_assets_v2', UKEY='adm_users_v1', SKEY='adm_session_v1';
-const FKEY='adm_floorplan_v1', PKEY='adm_pins_v1';
+const SB_URL = 'https://bgmrqzipgedincqctzvd.supabase.co';
+const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJnbXJxemlwZ2VkaW5jcWN0enZkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzcyMjU3MzgsImV4cCI6MjA5MjgwMTczOH0.JHxmgO9whH8xR9RB1pOSy5nnTm5k5KPiRaOMNOn8i7M';
+const SB_HEADERS = {'Content-Type':'application/json','apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY};
 
-/* ════════════════════════════
-   默认数据
-════════════════════════════ */
-const DEFAULT_USERS=[
-  {id:'u1',username:'admin',password:'admin123',name:'系统管理员',role:'admin',dept:'行政部'},
-  {id:'u2',username:'user', password:'user123', name:'普通用户',  role:'user', dept:'行政部'},
-];
-const SAMPLE_ASSETS=[
-  {id:'AST-001',name:'人体工学椅', cat:'家具',    loc:'3楼行政办公区',owner:'张明',dept:'行政部',status:'正常',  date:'2023-06-15',price:'980', model:'Herman Miller',note:''},
-  {id:'AST-002',name:'饮水机',    cat:'电器',    loc:'2楼茶水间',   owner:'李红',dept:'行政部',status:'正常',  date:'2023-03-01',price:'1200',model:'美的 MYR-WD30',note:'每月维保'},
-  {id:'AST-003',name:'会议桌',    cat:'家具',    loc:'4楼大会议室', owner:'王伟',dept:'行政部',status:'正常',  date:'2022-11-20',price:'8500',model:'',note:'12人座'},
-  {id:'AST-004',name:'微波炉',    cat:'电器',    loc:'2楼茶水间',   owner:'李红',dept:'行政部',status:'维修中',date:'2022-08-05',price:'450', model:'格兰仕 P70D',note:'加热功能异常'},
-  {id:'AST-005',name:'三人沙发',  cat:'家具',    loc:'1楼接待区',   owner:'陈静',dept:'行政部',status:'正常',  date:'2023-01-10',price:'3200',model:'',note:''},
-  {id:'AST-006',name:'激光打印机',cat:'办公设备',loc:'5楼财务室',   owner:'刘洋',dept:'财务部',status:'正常',  date:'2023-09-01',price:'2800',model:'惠普 M404DN',note:''},
-  {id:'AST-007',name:'空气净化器',cat:'电器',    loc:'总经理室',    owner:'孙磊',dept:'总经办',status:'正常',  date:'2023-07-12',price:'1680',model:'飞利浦 AC1711',note:''},
-  {id:'AST-008',name:'投影仪',    cat:'办公设备',loc:'4楼大会议室', owner:'王伟',dept:'行政部',status:'正常',  date:'2022-05-18',price:'5600',model:'爱普生 CB-S05',note:''},
-  {id:'AST-009',name:'冰箱',      cat:'电器',    loc:'2楼茶水间',   owner:'李红',dept:'行政部',status:'已报废',date:'2019-02-01',price:'1800',model:'',note:'超过使用年限'},
-  {id:'AST-010',name:'文件柜',    cat:'家具',    loc:'5楼财务室',   owner:'刘洋',dept:'财务部',status:'正常',  date:'2021-04-22',price:'650', model:'',note:''},
-];
+/* Supabase REST API 封装 */
+const sb = {
+  async select(table, query=''){
+    const r = await fetch(`${SB_URL}/rest/v1/${table}?${query}&order=created_at.asc`, {headers:SB_HEADERS});
+    if(!r.ok) throw new Error(await r.text());
+    return r.json();
+  },
+  async insert(table, data){
+    const r = await fetch(`${SB_URL}/rest/v1/${table}`, {
+      method:'POST', headers:{...SB_HEADERS,'Prefer':'return=representation'},
+      body: JSON.stringify(data)
+    });
+    if(!r.ok) throw new Error(await r.text());
+    return r.json();
+  },
+  async update(table, match, data){
+    const query = Object.entries(match).map(([k,v])=>`${k}=eq.${encodeURIComponent(v)}`).join('&');
+    const r = await fetch(`${SB_URL}/rest/v1/${table}?${query}`, {
+      method:'PATCH', headers:{...SB_HEADERS,'Prefer':'return=representation'},
+      body: JSON.stringify(data)
+    });
+    if(!r.ok) throw new Error(await r.text());
+    return r.json();
+  },
+  async upsert(table, data){
+    const r = await fetch(`${SB_URL}/rest/v1/${table}`, {
+      method:'POST', headers:{...SB_HEADERS,'Prefer':'resolution=merge-duplicates,return=representation'},
+      body: JSON.stringify(data)
+    });
+    if(!r.ok) throw new Error(await r.text());
+    return r.json();
+  },
+  async delete(table, match){
+    const query = Object.entries(match).map(([k,v])=>`${k}=eq.${encodeURIComponent(v)}`).join('&');
+    const r = await fetch(`${SB_URL}/rest/v1/${table}?${query}`, {method:'DELETE', headers:SB_HEADERS});
+    if(!r.ok) throw new Error(await r.text());
+  },
+  async deleteAll(table){
+    const r = await fetch(`${SB_URL}/rest/v1/${table}?id=neq.u1`, {method:'DELETE', headers:SB_HEADERS});
+    if(!r.ok) throw new Error(await r.text());
+  }
+};
 
 /* ════════════════════════════
    运行时状态
@@ -644,43 +601,93 @@ const SAMPLE_ASSETS=[
 let assets=[], users=[], pins=[], currentUser=null;
 let editId=null, editUserId=null, page=1;
 const PAGE_SIZE=12;
+const SKEY='adm_session_v2'; // 会话存 localStorage
 
-// 平面图
-let floorBitmap=null;       // ImageBitmap
-let vScale=1, vOffX=0, vOffY=0;
+// 平面图（图片仍存 localStorage，不占数据库）
+const FKEY='adm_floorplan_v1';
+let floorBitmap=null, vScale=1, vOffX=0, vOffY=0;
 let panMode=false, panning=false, panSX=0, panSY=0, panSOX=0, panSOY=0;
-let placingId=null;         // 正在放置的 assetId
-let pendingCX=0, pendingCY=0; // 待放置的画布坐标
+let placingId=null, pendingCX=0, pendingCY=0;
 
 const CAT_COLOR={'家具':'#1a56db','电器':'#d97706','办公设备':'#7c3aed'};
-function pinColor(cat){return CAT_COLOR[cat]||'#dc2626';}
+const pinColor=cat=>CAT_COLOR[cat]||'#dc2626';
 
 /* ════════════════════════════
-   本地存储
+   工具函数
 ════════════════════════════ */
-function loadData(){
-  try{const d=localStorage.getItem(AKEY);assets=d?JSON.parse(d):SAMPLE_ASSETS;}catch(e){assets=SAMPLE_ASSETS;}
-  try{const u=localStorage.getItem(UKEY);users=u?JSON.parse(u):DEFAULT_USERS;}catch(e){users=DEFAULT_USERS;}
-  try{const p=localStorage.getItem(PKEY);pins=p?JSON.parse(p):[];}catch(e){pins=[];}
-  try{const s=localStorage.getItem(SKEY);if(s){const sv=JSON.parse(s);currentUser=users.find(x=>x.id===sv.id)||null;}}catch(e){}
+function showLoading(msg='加载中…'){
+  document.getElementById('loadingText').textContent=msg;
+  document.getElementById('loadingMask').classList.add('show');
 }
-const saveAssets=()=>{try{localStorage.setItem(AKEY,JSON.stringify(assets));}catch(e){}};
-const saveUsers =()=>{try{localStorage.setItem(UKEY,JSON.stringify(users));}catch(e){}};
-const savePins  =()=>{try{localStorage.setItem(PKEY,JSON.stringify(pins));}catch(e){}};
-const saveSession=()=>{try{localStorage.setItem(SKEY,currentUser?JSON.stringify({id:currentUser.id}):'');}catch(e){}};
+function hideLoading(){document.getElementById('loadingMask').classList.remove('show');}
+
+let toastTimer;
+function toast(msg, type='ok'){
+  const el=document.getElementById('toast');
+  el.textContent=msg; el.className='toast show '+(type==='err'?'err':'ok');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>el.classList.remove('show'),2800);
+}
+
+function setDbStatus(ok){
+  document.getElementById('dbDot').className='db-dot '+(ok?'ok':'err');
+  document.getElementById('dbStatusText').textContent=ok?'已连接':'连接失败';
+}
+
+function saveSession(){try{localStorage.setItem(SKEY,currentUser?JSON.stringify({id:currentUser.id}):'');}catch(e){}}
+
+/* ════════════════════════════
+   初始化：从数据库加载数据
+════════════════════════════ */
+async function initApp(){
+  showLoading('正在连接数据库…');
+  try{
+    [assets, users, pins] = await Promise.all([
+      sb.select('assets'),
+      sb.select('app_users'),
+      sb.select('pins'),
+    ]);
+    setDbStatus(true);
+
+    // 恢复会话
+    try{
+      const s=localStorage.getItem(SKEY);
+      if(s){const sv=JSON.parse(s);currentUser=users.find(x=>x.id===sv.id)||null;}
+    }catch(e){}
+
+    hideLoading();
+    if(currentUser) enterMain();
+    else restoreFloorPlan(); // 预加载平面图缓存
+
+  }catch(err){
+    setDbStatus(false);
+    hideLoading();
+    // 数据库连接失败时仍可查看本地缓存（降级处理）
+    toast('数据库连接失败，请检查网络','err');
+    console.error(err);
+  }
+}
 
 /* ════════════════════════════
    认证
 ════════════════════════════ */
-function doLogin(){
-  const u=document.getElementById('loginUser').value.trim();
-  const p=document.getElementById('loginPass').value;
-  const err=document.getElementById('loginError');
-  if(!u||!p){err.style.display='block';err.textContent='请填写用户名和密码';return;}
-  const found=users.find(x=>x.username===u&&x.password===p);
-  if(!found){err.style.display='block';err.textContent='用户名或密码错误，请重试';return;}
-  err.style.display='none';
-  currentUser=found;saveSession();enterMain();
+async function doLogin(){
+  const username=document.getElementById('loginUser').value.trim();
+  const password=document.getElementById('loginPass').value;
+  const errEl=document.getElementById('loginError');
+  if(!username||!password){errEl.style.display='block';errEl.textContent='请填写用户名和密码';return;}
+  const btn=document.getElementById('loginBtn');
+  btn.disabled=true;btn.textContent='验证中…';
+  try{
+    // 从已加载的 users 中验证（避免明文传密码给数据库查询）
+    const found=users.find(u=>u.username===username&&u.password===password);
+    if(!found){errEl.style.display='block';errEl.textContent='用户名或密码错误';btn.disabled=false;btn.textContent='登 录';return;}
+    errEl.style.display='none';
+    currentUser=found;saveSession();enterMain();
+  }catch(e){
+    errEl.style.display='block';errEl.textContent='登录失败：'+e.message;
+  }
+  btn.disabled=false;btn.textContent='登 录';
 }
 function doLogout(){
   currentUser=null;saveSession();
@@ -690,6 +697,7 @@ function doLogout(){
   document.getElementById('screen-main').classList.remove('active');
 }
 function togglePw(){const i=document.getElementById('loginPass');i.type=i.type==='password'?'text':'password';}
+
 function enterMain(){
   document.getElementById('screen-login').classList.remove('active');
   document.getElementById('screen-main').classList.add('active');
@@ -699,13 +707,14 @@ function enterMain(){
   const isAdmin=currentUser.role==='admin';
   document.getElementById('tabUsers').style.display=isAdmin?'':'none';
   document.getElementById('btnAdd').style.display=isAdmin?'':'none';
+  document.getElementById('btnImport').style.display=isAdmin?'':'none';
   renderStats();renderFilters();renderTable();
   activateTab('list',document.querySelector('.tab'));
   restoreFloorPlan();
 }
 
 /* ════════════════════════════
-   工具
+   标签页
 ════════════════════════════ */
 function activateTab(id,btn){
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
@@ -716,15 +725,15 @@ function activateTab(id,btn){
 function switchTab(id,btn){
   activateTab(id,btn);
   if(id==='report')renderReport();
-  if(id==='users')renderUserTable();
+  if(id==='users'){loadUsers();renderUserTable();}
   if(id==='floorplan')setTimeout(()=>{if(floorBitmap)fpDraw();},40);
 }
 
 /* ════════════════════════════
-   统计卡片
+   统计
 ════════════════════════════ */
 function renderStats(){
-  const tagged=[...new Set(pins.map(p=>p.assetId))].length;
+  const tagged=new Set(pins.map(p=>p.asset_id)).size;
   document.getElementById('stats').innerHTML=`
     <div class="stat-card"><div class="stat-label">资产总数</div><div class="stat-val">${assets.length}</div></div>
     <div class="stat-card"><div class="stat-label">正常在用</div><div class="stat-val">${assets.filter(a=>a.status==='正常').length}</div></div>
@@ -733,14 +742,14 @@ function renderStats(){
 }
 
 /* ════════════════════════════
-   筛选器 & datalist
+   筛选器
 ════════════════════════════ */
 function renderFilters(){
-  const cats =[...new Set(assets.map(a=>a.cat).filter(Boolean))];
+  const cats=[...new Set(assets.map(a=>a.cat).filter(Boolean))];
   const depts=[...new Set(assets.map(a=>a.dept).filter(Boolean))];
-  const locs =[...new Set(assets.map(a=>a.loc).filter(Boolean))];
-  const fc=document.getElementById('filterCat'),  sc=fc.value;
-  const fd=document.getElementById('filterDept'), sd=fd.value;
+  const locs=[...new Set(assets.map(a=>a.loc).filter(Boolean))];
+  const fc=document.getElementById('filterCat'),sc=fc.value;
+  const fd=document.getElementById('filterDept'),sd=fd.value;
   fc.innerHTML='<option value="">全部类别</option>'+cats.map(c=>`<option value="${c}"${sc===c?' selected':''}>${c}</option>`).join('');
   fd.innerHTML='<option value="">全部部门</option>'+depts.map(d=>`<option value="${d}"${sd===d?' selected':''}>${d}</option>`).join('');
   document.getElementById('catList').innerHTML=cats.map(c=>`<option value="${c}">`).join('');
@@ -749,7 +758,7 @@ function renderFilters(){
 }
 
 /* ════════════════════════════
-   资产列表表格
+   资产列表
 ════════════════════════════ */
 function getFiltered(){
   const q=(document.getElementById('search').value||'').toLowerCase();
@@ -779,7 +788,7 @@ function renderTable(){
   else{
     empty.style.display='none';
     tbody.innerHTML=slice.map(a=>{
-      const hasPin=pins.some(p=>p.assetId===a.id);
+      const hasPin=pins.some(p=>p.asset_id===a.id);
       return `<tr>
         <td style="font-family:monospace;font-size:12px">${a.id}</td>
         <td style="font-weight:500">${a.name}</td>
@@ -813,7 +822,7 @@ function renderPagination(pages,total){
 function gotoPage(p){page=p;renderTable();}
 
 /* ════════════════════════════
-   资产 CRUD
+   资产 CRUD → Supabase
 ════════════════════════════ */
 function openAddModal(){
   if(!currentUser||currentUser.role!=='admin')return;
@@ -834,14 +843,19 @@ function editAsset(id){
   document.getElementById('fDate').value=a.date||'';
   document.getElementById('modalOverlay').classList.add('show');
 }
-function deleteAsset(id){
+async function deleteAsset(id){
   if(!confirm('确认删除该资产？'))return;
-  assets=assets.filter(a=>a.id!==id);
-  pins=pins.filter(p=>p.assetId!==id);
-  saveAssets();savePins();renderStats();renderFilters();renderTable();
-  fpRenderPins();renderFpList();
+  showLoading('删除中…');
+  try{
+    await sb.delete('assets',{id});
+    assets=assets.filter(a=>a.id!==id);
+    pins=pins.filter(p=>p.asset_id!==id);
+    renderStats();renderFilters();renderTable();fpRenderPins();renderFpList();
+    toast('资产已删除');
+  }catch(e){toast('删除失败：'+e.message,'err');}
+  hideLoading();
 }
-function saveAsset(){
+async function saveAsset(){
   const id=document.getElementById('fId').value.trim();
   const name=document.getElementById('fName').value.trim();
   if(!id||!name){alert('资产编号和名称为必填项');return;}
@@ -852,15 +866,25 @@ function saveAsset(){
     owner:document.getElementById('fOwner').value.trim(),
     dept:document.getElementById('fDept').value.trim(),
     status:document.getElementById('fStatus').value,
-    date:document.getElementById('fDate').value,
-    price:document.getElementById('fPrice').value,
-    model:document.getElementById('fModel').value.trim(),
-    note:document.getElementById('fNote').value.trim()
+    date:document.getElementById('fDate').value||null,
+    price:document.getElementById('fPrice').value||null,
+    model:document.getElementById('fModel').value.trim()||null,
+    note:document.getElementById('fNote').value.trim()||null,
   };
-  if(editId){const i=assets.findIndex(a=>a.id===editId);assets[i]=obj;}
-  else assets.push(obj);
-  saveAssets();renderStats();renderFilters();renderTable();closeModal();
-  renderFpList();
+  showLoading('保存中…');
+  try{
+    if(editId){
+      await sb.update('assets',{id},obj);
+      const i=assets.findIndex(a=>a.id===editId);assets[i]={...assets[i],...obj};
+      toast('资产已更新');
+    }else{
+      await sb.insert('assets',obj);
+      assets.push(obj);
+      toast('资产已新增');
+    }
+    renderStats();renderFilters();renderTable();renderFpList();closeModal();
+  }catch(e){toast('保存失败：'+e.message,'err');}
+  hideLoading();
 }
 function clearAssetForm(){
   ['fId','fName','fCat','fLoc','fOwner','fDept','fPrice','fModel','fNote'].forEach(id=>{document.getElementById(id).value='';});
@@ -879,15 +903,14 @@ function processScan(){
   const found=assets.find(a=>a.id.toLowerCase()===val.toLowerCase());
   const entry=document.createElement('div');
   entry.className='log-entry'+(found?' ok':' err');
-  entry.textContent=found?`[${ts}] ✓ 识别成功: ${found.id} — ${found.name}（${found.loc||'—'}）`:`[${ts}] ✗ 未找到编号: ${val}`;
+  entry.textContent=found?`[${ts}] ✓ ${found.id} — ${found.name}（${found.loc||'—'}）`:`[${ts}] ✗ 未找到编号: ${val}`;
   log.prepend(entry);
   if(found){
     document.getElementById('scanResultCard').style.display='block';
     document.getElementById('scanResultBody').innerHTML=`
       <table style="font-size:13px;width:100%">
-        <tr><td style="color:#888;padding:5px 0;width:80px">资产编号</td><td style="font-family:monospace;font-size:12px">${found.id}</td></tr>
+        <tr><td style="color:#888;padding:5px 0;width:80px">编号</td><td style="font-family:monospace;font-size:12px">${found.id}</td></tr>
         <tr><td style="color:#888;padding:5px 0">名称</td><td style="font-weight:500">${found.name}</td></tr>
-        <tr><td style="color:#888;padding:5px 0">类别</td><td>${found.cat||'—'}</td></tr>
         <tr><td style="color:#888;padding:5px 0">位置</td><td>${found.loc||'—'}</td></tr>
         <tr><td style="color:#888;padding:5px 0">状态</td><td>${statusBadge(found.status)}</td></tr>
       </table>
@@ -909,7 +932,7 @@ function processScan(){
 }
 
 /* ════════════════════════════
-   平面图 — 文件加载
+   平面图 — 文件加载（仍用 localStorage 缓存图片）
 ════════════════════════════ */
 if(typeof pdfjsLib!=='undefined'){
   pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
@@ -917,21 +940,13 @@ if(typeof pdfjsLib!=='undefined'){
 function handleFileSelect(e){if(e.target.files[0])loadFloorFile(e.target.files[0]);}
 function handleFileDrop(e){e.preventDefault();if(e.dataTransfer.files[0])loadFloorFile(e.dataTransfer.files[0]);}
 async function loadFloorFile(file){
-  const uploadEl=document.getElementById('fpUpload');
-  uploadEl.querySelector('p').textContent='正在加载，请稍候…';
+  showLoading('正在渲染平面图…');
   try{
-    if(file.type==='application/pdf'||file.name.toLowerCase().endsWith('.pdf')){
-      await loadPdfFile(file);
-    }else if(file.type.startsWith('image/')){
-      await loadImgFile(file);
-    }else{
-      alert('请上传 PDF 或图片文件（JPG/PNG）');
-      uploadEl.querySelector('p').textContent='点击上传或拖拽平面图到此处';
-    }
-  }catch(err){
-    alert('文件加载失败：'+err.message);
-    uploadEl.querySelector('p').textContent='点击上传或拖拽平面图到此处';
-  }
+    if(file.type==='application/pdf'||file.name.toLowerCase().endsWith('.pdf')) await loadPdfFile(file);
+    else if(file.type.startsWith('image/')) await loadImgFile(file);
+    else{alert('请上传 PDF 或图片文件');hideLoading();return;}
+  }catch(err){alert('文件加载失败：'+err.message);}
+  hideLoading();
 }
 async function loadPdfFile(file){
   const buf=await file.arrayBuffer();
@@ -957,12 +972,7 @@ async function loadImgFile(file){
   });
 }
 async function restoreFloorPlan(){
-  try{
-    const data=localStorage.getItem(FKEY);if(!data)return;
-    const img=new Image();
-    img.onload=async()=>{floorBitmap=await createImageBitmap(img);showFpMain();};
-    img.src=data;
-  }catch(e){}
+  try{const data=localStorage.getItem(FKEY);if(!data)return;const img=new Image();img.onload=async()=>{floorBitmap=await createImageBitmap(img);if(document.getElementById('fpMain'))showFpMain();};img.src=data;}catch(e){}
 }
 function showFpMain(){
   document.getElementById('fpUpload').style.display='none';
@@ -971,20 +981,17 @@ function showFpMain(){
 }
 function clearFloorPlan(){
   if(!confirm('确认更换图纸？'))return;
-  floorBitmap=null;
-  try{localStorage.removeItem(FKEY);}catch(e){}
+  floorBitmap=null;try{localStorage.removeItem(FKEY);}catch(e){}
   document.getElementById('fpUpload').style.display='';
   document.getElementById('fpMain').style.display='none';
-  document.getElementById('fpUpload').querySelector('p').textContent='点击上传或拖拽平面图到此处';
   document.getElementById('pdfInput').value='';
 }
 
 /* ════════════════════════════
-   平面图 — 画布绘制
+   平面图 — 画布
 ════════════════════════════ */
 const fpCanvas=()=>document.getElementById('floorCanvas');
 const fpWrapper=()=>document.getElementById('canvasWrapper');
-
 function fpDraw(){
   if(!floorBitmap)return;
   const cv=fpCanvas(),ctx=cv.getContext('2d');
@@ -994,18 +1001,13 @@ function fpDraw(){
 }
 function fpResetView(){
   if(!floorBitmap)return;
-  const wr=fpWrapper();
-  const ww=wr.clientWidth||760;
-  const cv=fpCanvas();
-  vScale=ww/floorBitmap.width;
-  vOffX=0;vOffY=0;
-  cv.width=ww;
-  cv.height=Math.round(floorBitmap.height*vScale);
+  const wr=fpWrapper(),ww=wr.clientWidth||760,cv=fpCanvas();
+  vScale=ww/floorBitmap.width;vOffX=0;vOffY=0;
+  cv.width=ww;cv.height=Math.round(floorBitmap.height*vScale);
   fpDraw();fpUpdateZoom();
 }
 function fpZoom(f){
-  const cv=fpCanvas();
-  const cx=cv.width/2,cy=cv.height/2;
+  const cv=fpCanvas(),cx=cv.width/2,cy=cv.height/2;
   vOffX=cx-(cx-vOffX)*f;vOffY=cy-(cy-vOffY)*f;vScale*=f;
   fpDraw();fpUpdateZoom();
 }
@@ -1019,29 +1021,20 @@ function togglePan(){
   if(panMode){btn.classList.add('primary');cv.classList.add('pan');}
   else{btn.classList.remove('primary');cv.classList.remove('pan');}
 }
-
-/* ── 鼠标事件 ── */
 function setupCanvasEvents(){
   const cv=fpCanvas();
   cv.addEventListener('mousedown',e=>{
     if(panMode){panning=true;panSX=e.clientX;panSY=e.clientY;panSOX=vOffX;panSOY=vOffY;return;}
-    const rect=cv.getBoundingClientRect();
-    const cx=e.clientX-rect.left,cy=e.clientY-rect.top;
+    const rect=cv.getBoundingClientRect(),cx=e.clientX-rect.left,cy=e.clientY-rect.top;
     if(placingId!==null){placePin(placingId,cx,cy);return;}
-    if(currentUser&&currentUser.role==='admin'&&floorBitmap){
-      pendingCX=cx;pendingCY=cy;
-      openPickPopup(e.clientX,e.clientY);
-    }
+    if(currentUser&&currentUser.role==='admin'&&floorBitmap){pendingCX=cx;pendingCY=cy;openPickPopup(e.clientX,e.clientY);}
   });
-  cv.addEventListener('mousemove',e=>{
-    if(panning){vOffX=panSOX+(e.clientX-panSX);vOffY=panSOY+(e.clientY-panSY);fpDraw();}
-  });
+  cv.addEventListener('mousemove',e=>{if(panning){vOffX=panSOX+(e.clientX-panSX);vOffY=panSOY+(e.clientY-panSY);fpDraw();}});
   cv.addEventListener('mouseup',()=>{panning=false;});
   cv.addEventListener('mouseleave',()=>{panning=false;});
   cv.addEventListener('wheel',e=>{
     e.preventDefault();
-    const rect=cv.getBoundingClientRect();
-    const mx=e.clientX-rect.left,my=e.clientY-rect.top;
+    const rect=cv.getBoundingClientRect(),mx=e.clientX-rect.left,my=e.clientY-rect.top;
     const f=e.deltaY<0?1.12:0.88;
     vOffX=mx-(mx-vOffX)*f;vOffY=my-(my-vOffY)*f;vScale*=f;
     fpDraw();fpUpdateZoom();
@@ -1049,33 +1042,38 @@ function setupCanvasEvents(){
 }
 
 /* ════════════════════════════
-   平面图 — 图钉
+   平面图 — 图钉 → Supabase
 ════════════════════════════ */
-// 归一化坐标存储（相对于图片尺寸的比例），不受缩放影响
-function canvasToNorm(cx,cy){
-  if(!floorBitmap)return{nx:0,ny:0};
-  return{nx:(cx-vOffX)/(floorBitmap.width*vScale),ny:(cy-vOffY)/(floorBitmap.height*vScale)};
-}
-function normToCanvas(nx,ny){
-  if(!floorBitmap)return{cx:0,cy:0};
-  return{cx:nx*floorBitmap.width*vScale+vOffX,cy:ny*floorBitmap.height*vScale+vOffY};
-}
-function placePin(assetId,cx,cy){
+function canvasToNorm(cx,cy){if(!floorBitmap)return{nx:0,ny:0};return{nx:(cx-vOffX)/(floorBitmap.width*vScale),ny:(cy-vOffY)/(floorBitmap.height*vScale)};}
+function normToCanvas(nx,ny){if(!floorBitmap)return{cx:0,cy:0};return{cx:nx*floorBitmap.width*vScale+vOffX,cy:ny*floorBitmap.height*vScale+vOffY};}
+
+async function placePin(assetId,cx,cy){
   const{nx,ny}=canvasToNorm(cx,cy);
-  const idx=pins.findIndex(p=>p.assetId===assetId);
-  const pin={id:'pin_'+Date.now(),assetId,nx,ny};
-  if(idx>=0)pins[idx]=pin;else pins.push(pin);
-  savePins();cancelPlaceMode();fpRenderPins();renderFpList();renderTable();renderStats();
+  const existing=pins.find(p=>p.asset_id===assetId);
+  showLoading('保存标注…');
+  try{
+    if(existing){
+      await sb.update('pins',{id:existing.id},{nx,ny});
+      existing.nx=nx;existing.ny=ny;
+    }else{
+      const newPin={id:'pin_'+Date.now(),asset_id:assetId,nx,ny};
+      await sb.insert('pins',newPin);
+      pins.push(newPin);
+    }
+    toast('标注已保存');
+    cancelPlaceMode();fpRenderPins();renderFpList();renderTable();renderStats();
+  }catch(e){toast('标注保存失败：'+e.message,'err');}
+  hideLoading();
 }
+
 function fpRenderPins(){
   if(!floorBitmap)return;
-  const layer=document.getElementById('pinsLayer');
-  const cv=fpCanvas();
+  const layer=document.getElementById('pinsLayer'),cv=fpCanvas();
   layer.style.width=cv.width+'px';layer.style.height=cv.height+'px';
   layer.innerHTML='';
   const tooltip=document.getElementById('pinTooltip');
   pins.forEach(pin=>{
-    const asset=assets.find(a=>a.id===pin.assetId);if(!asset)return;
+    const asset=assets.find(a=>a.id===pin.asset_id);if(!asset)return;
     const{cx,cy}=normToCanvas(pin.nx,pin.ny);
     if(cx<-30||cy<-30||cx>cv.width+30||cy>cv.height+30)return;
     const color=pinColor(asset.cat);
@@ -1087,10 +1085,8 @@ function fpRenderPins(){
     </svg><div class="pin-label">${asset.name}</div>`;
     el.addEventListener('mouseenter',()=>{
       tooltip.innerHTML=`<strong>${asset.name}</strong>
-        <span>编号：${asset.id}</span>
-        <span>类别：${asset.cat||'—'}</span>
-        <span>位置：${asset.loc||'—'}</span>
-        <span>状态：${asset.status||'—'}</span>
+        <span>编号：${asset.id}</span><span>类别：${asset.cat||'—'}</span>
+        <span>位置：${asset.loc||'—'}</span><span>状态：${asset.status||'—'}</span>
         ${currentUser&&currentUser.role==='admin'?`<button class="del-btn" onclick="deletePin('${pin.id}')">删除此标注</button>`:''}`;
       const lx=Math.min(cx+26,cv.width-160),ly=Math.max(0,cy-90);
       tooltip.style.left=lx+'px';tooltip.style.top=ly+'px';
@@ -1104,10 +1100,17 @@ function fpRenderPins(){
     layer.appendChild(el);
   });
 }
-function deletePin(pinId){
-  pins=pins.filter(p=>p.id!==pinId);
-  savePins();fpRenderPins();renderFpList();renderTable();renderStats();
-  document.getElementById('pinTooltip').classList.remove('show');
+
+async function deletePin(pinId){
+  showLoading('删除标注…');
+  try{
+    await sb.delete('pins',{id:pinId});
+    pins=pins.filter(p=>p.id!==pinId);
+    fpRenderPins();renderFpList();renderTable();renderStats();
+    document.getElementById('pinTooltip').classList.remove('show');
+    toast('标注已删除');
+  }catch(e){toast('删除失败：'+e.message,'err');}
+  hideLoading();
 }
 
 /* ════════════════════════════
@@ -1122,7 +1125,6 @@ function startPlacing(assetId,jumpToFp){
   renderFpList();
   if(jumpToFp){
     const tabs=document.querySelectorAll('.tab');
-    // 找到平面标注tab（第3个，index 2）
     activateTab('floorplan',tabs[2]);
     setTimeout(()=>{if(floorBitmap)fpDraw();},40);
   }
@@ -1133,55 +1135,41 @@ function cancelPlaceMode(){
   if(floorBitmap)fpCanvas().style.cursor=panMode?'grab':'crosshair';
   renderFpList();
 }
-
-/* ════════════════════════════
-   平面图 — 右侧资产列表
-════════════════════════════ */
 function renderFpList(){
   const q=(document.getElementById('fpSearch').value||'').toLowerCase();
   const list=assets.filter(a=>!q||`${a.id} ${a.name}`.toLowerCase().includes(q));
-  const taggedIds=new Set(pins.map(p=>p.assetId));
+  const taggedIds=new Set(pins.map(p=>p.asset_id));
   document.getElementById('fpTagCount').textContent=`${taggedIds.size} / ${assets.length} 已标注`;
   const isAdmin=currentUser&&currentUser.role==='admin';
   document.getElementById('fpAssetList').innerHTML=list.map(a=>{
-    const isTagged=taggedIds.has(a.id);
-    const isPlacing=placingId===a.id;
-    const color=pinColor(a.cat);
+    const isTagged=taggedIds.has(a.id),isPlacing=placingId===a.id,color=pinColor(a.cat);
     return `<div class="fp-asset-item">
       <div class="fp-dot" style="background:${color}"></div>
       <span class="fp-aname" title="${a.name}">${a.name}</span>
       <span class="fp-aid">${a.id}</span>
       ${isTagged?'<span class="fp-tagged-badge">已标注</span>':''}
       ${isAdmin?`<button class="fp-tag-btn${isPlacing?' active-placing':''}"
-        onclick="isPlacingThis('${a.id}')?cancelPlaceMode():startPlacing('${a.id}',false)">
+        onclick="${isPlacing?'cancelPlaceMode()':``startPlacing('${a.id}',false)``}">
         ${isPlacing?'取消':'📍'}
       </button>`:''}
     </div>`;
   }).join('');
 }
-function isPlacingThis(id){return placingId===id;}
-
-/* ════════════════════════════
-   点击画布空白 → 选资产弹窗
-════════════════════════════ */
-function openPickPopup(screenX,screenY){
-  document.getElementById('pickSearch').value='';
-  renderPickList();
-  const popup=document.getElementById('pickPopup');
-  popup.style.left=Math.min(screenX,window.innerWidth-250)+'px';
-  popup.style.top=Math.min(screenY+4,window.innerHeight-300)+'px';
-  popup.classList.add('show');
+function openPickPopup(sx,sy){
+  document.getElementById('pickSearch').value='';renderPickList();
+  const pp=document.getElementById('pickPopup');
+  pp.style.left=Math.min(sx,window.innerWidth-250)+'px';
+  pp.style.top=Math.min(sy+4,window.innerHeight-300)+'px';
+  pp.classList.add('show');
   setTimeout(()=>document.getElementById('pickSearch').focus(),50);
 }
 function renderPickList(){
   const q=(document.getElementById('pickSearch').value||'').toLowerCase();
-  const list=assets.filter(a=>!q||`${a.id} ${a.name}`.toLowerCase().includes(q)).slice(0,25);
-  document.getElementById('pickList').innerHTML=list.map(a=>`
-    <div class="pick-item" onclick="pickAndPlace('${a.id}')">
-      ${a.name}<small>${a.id} · ${a.cat||'—'}</small>
-    </div>`).join('');
+  document.getElementById('pickList').innerHTML=assets
+    .filter(a=>!q||`${a.id} ${a.name}`.toLowerCase().includes(q)).slice(0,25)
+    .map(a=>`<div class="pick-item" onclick="pickAndPlace('${a.id}')">${a.name}<small>${a.id} · ${a.cat||'—'}</small></div>`).join('');
 }
-function pickAndPlace(assetId){closePickPopup();placePin(assetId,pendingCX,pendingCY);}
+function pickAndPlace(id){closePickPopup();placePin(id,pendingCX,pendingCY);}
 function closePickPopup(){document.getElementById('pickPopup').classList.remove('show');}
 document.addEventListener('mousedown',e=>{
   const pp=document.getElementById('pickPopup');
@@ -1214,8 +1202,11 @@ function renderReport(){
 }
 
 /* ════════════════════════════
-   用户管理
+   用户管理 → Supabase
 ════════════════════════════ */
+async function loadUsers(){
+  try{users=await sb.select('app_users');}catch(e){toast('加载用户失败','err');}
+}
 function renderUserTable(){
   document.getElementById('userTbody').innerHTML=users.map(u=>`<tr>
     <td style="font-family:monospace;font-size:13px">${u.username}</td>
@@ -1228,16 +1219,14 @@ function renderUserTable(){
     </td></tr>`).join('');
 }
 function openAddUserModal(){
-  editUserId=null;
-  document.getElementById('userModalTitle').textContent='新增用户';
+  editUserId=null;document.getElementById('userModalTitle').textContent='新增用户';
   ['uUsername','uName','uPass','uDept'].forEach(id=>{document.getElementById(id).value='';});
   document.getElementById('uRole').value='user';
   document.getElementById('userModalOverlay').classList.add('show');
 }
 function editUser(id){
   const u=users.find(x=>x.id===id);if(!u)return;
-  editUserId=id;
-  document.getElementById('userModalTitle').textContent='编辑用户';
+  editUserId=id;document.getElementById('userModalTitle').textContent='编辑用户';
   document.getElementById('uUsername').value=u.username;
   document.getElementById('uName').value=u.name||'';
   document.getElementById('uPass').value=u.password;
@@ -1245,25 +1234,194 @@ function editUser(id){
   document.getElementById('uDept').value=u.dept||'';
   document.getElementById('userModalOverlay').classList.add('show');
 }
-function deleteUser(id){
+async function deleteUser(id){
   if(!confirm('确认删除该用户？'))return;
-  users=users.filter(u=>u.id!==id);saveUsers();renderUserTable();
+  showLoading('删除中…');
+  try{
+    await sb.delete('app_users',{id});
+    users=users.filter(u=>u.id!==id);renderUserTable();toast('用户已删除');
+  }catch(e){toast('删除失败：'+e.message,'err');}
+  hideLoading();
 }
-function saveUser(){
+async function saveUser(){
   const username=document.getElementById('uUsername').value.trim();
   const password=document.getElementById('uPass').value;
   if(!username||!password){alert('用户名和密码为必填项');return;}
   if(!editUserId&&users.find(u=>u.username===username)){alert('用户名已存在');return;}
   const obj={id:editUserId||('u'+Date.now()),username,password,
-    name:document.getElementById('uName').value.trim(),
+    name:document.getElementById('uName').value.trim()||null,
     role:document.getElementById('uRole').value,
-    dept:document.getElementById('uDept').value.trim()};
-  if(editUserId){const i=users.findIndex(u=>u.id===editUserId);users[i]=obj;}
-  else users.push(obj);
-  saveUsers();renderUserTable();closeUserModal();
+    dept:document.getElementById('uDept').value.trim()||null};
+  showLoading('保存中…');
+  try{
+    if(editUserId){await sb.update('app_users',{id:editUserId},obj);const i=users.findIndex(u=>u.id===editUserId);users[i]={...users[i],...obj};toast('用户已更新');}
+    else{await sb.insert('app_users',obj);users.push(obj);toast('用户已新增');}
+    renderUserTable();closeUserModal();
+  }catch(e){toast('保存失败：'+e.message,'err');}
+  hideLoading();
 }
 function closeUserModal(){document.getElementById('userModalOverlay').classList.remove('show');}
 document.getElementById('userModalOverlay').addEventListener('click',e=>{if(e.target===document.getElementById('userModalOverlay'))closeUserModal();});
+
+/* ════════════════════════════
+   批量导入 → Supabase
+════════════════════════════ */
+let importTab='assets', parsedAssets=[], parsedUsers=[];
+const ASSET_HEADERS=['资产编号','名称','类别','位置','所属人','所属部门','状态','购入日期','金额(元)','品牌型号','备注'];
+const USER_HEADERS=['用户名','姓名','密码','角色(admin/user)','部门'];
+const ASSET_SAMPLE=[['AST-011','示例椅子','家具','3楼会议室','张三','行政部','正常','2024-01-10','500','','']];
+const USER_SAMPLE=[['zhangsan','张三','pass123','user','行政部']];
+
+function openImportModal(tab){
+  importTab=tab||'assets';switchImportTab(importTab);
+  resetImportPanel('assets');resetImportPanel('users');
+  document.getElementById('importModalOverlay').classList.add('show');
+}
+function closeImportModal(){document.getElementById('importModalOverlay').classList.remove('show');}
+document.getElementById('importModalOverlay').addEventListener('click',e=>{if(e.target===document.getElementById('importModalOverlay'))closeImportModal();});
+function switchImportTab(tab){
+  importTab=tab;
+  ['assets','users'].forEach(t=>{
+    document.getElementById('itab-'+t).classList.toggle('active',t===tab);
+    document.getElementById('ipanel-'+t).classList.toggle('active',t===tab);
+  });refreshImportBtn();
+}
+function resetImportPanel(type){
+  if(type==='assets'){parsedAssets=[];document.getElementById('assetPreview').style.display='none';document.getElementById('assetModeRow').style.display='none';document.getElementById('assetFileInput').value='';}
+  else{parsedUsers=[];document.getElementById('userPreview').style.display='none';document.getElementById('userModeRow').style.display='none';document.getElementById('userFileInput').value='';}
+  refreshImportBtn();
+}
+function refreshImportBtn(){
+  const ok=(importTab==='assets'?parsedAssets:parsedUsers).filter(r=>!r._err).length>0;
+  document.getElementById('btnDoImport').disabled=!ok;
+}
+function downloadTpl(type,fmt){
+  const sep=',',q=v=>`"${v}"`;
+  const[hdrs,rows]=type==='assets'?[ASSET_HEADERS,ASSET_SAMPLE]:[USER_HEADERS,USER_SAMPLE];
+  const csv='\uFEFF'+[hdrs.map(q).join(sep),...rows.map(r=>r.map(q).join(sep))].join('\n');
+  const url=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));
+  const a=document.createElement('a');a.href=url;a.download=`${type==='assets'?'资产':'用户'}导入模板.csv`;a.click();URL.revokeObjectURL(url);
+}
+function handleImportDrop(e,type){e.preventDefault();const f=e.dataTransfer.files[0];if(f)parseImportFile(f,type);}
+function handleImportFile(e,type){if(e.target.files[0])parseImportFile(e.target.files[0],type);}
+function parseImportFile(file,type){
+  const reader=new FileReader();
+  reader.onload=e=>{
+    let text=e.target.result.replace(/^\uFEFF/,'');
+    const sep=text.includes('\t')?'\t':',';
+    const lines=text.split(/\r?\n/).filter(l=>l.trim());
+    if(lines.length<2){alert('文件内容为空或缺少数据行');return;}
+    const header=parseCsvLine(lines[0],sep).map(h=>h.trim());
+    const dataLines=lines.slice(1);
+    if(type==='assets')parseAssetRows(header,dataLines,sep);
+    else parseUserRows(header,dataLines,sep);
+  };
+  reader.readAsText(file,'UTF-8');
+}
+function parseCsvLine(line,sep){
+  if(sep==='\t')return line.split('\t').map(v=>v.trim());
+  const result=[];let cur='',inQ=false;
+  for(let i=0;i<line.length;i++){
+    const c=line[i];
+    if(c==='"'){if(inQ&&line[i+1]==='"'){cur+='"';i++;}else inQ=!inQ;}
+    else if(c===sep&&!inQ){result.push(cur.trim());cur='';}
+    else cur+=c;
+  }
+  result.push(cur.trim());return result;
+}
+const ASSET_COL_MAP={'资产编号':'id','编号':'id','id':'id','名称':'name','资产名称':'name','name':'name','类别':'cat','category':'cat','位置':'loc','location':'loc','所属人':'owner','负责人':'owner','owner':'owner','所属部门':'dept','部门':'dept','department':'dept','状态':'status','status':'status','购入日期':'date','日期':'date','date':'date','金额':'price','金额(元)':'price','price':'price','品牌型号':'model','品牌':'model','model':'model','备注':'note','note':'note'};
+const USER_COL_MAP={'用户名':'username','username':'username','姓名':'name','name':'name','密码':'password','password':'password','角色':'role','角色(admin/user)':'role','role':'role','部门':'dept','department':'dept'};
+function buildColIdx(header,map){const idx={};header.forEach((h,i)=>{const key=map[h]||map[h.toLowerCase()];if(key)idx[key]=i;});return idx;}
+function parseAssetRows(header,lines,sep){
+  const idx=buildColIdx(header,ASSET_COL_MAP);
+  parsedAssets=lines.map((line,i)=>{
+    const cols=parseCsvLine(line,sep);
+    const r={id:(cols[idx.id]||'').trim(),name:(cols[idx.name]||'').trim(),cat:(cols[idx.cat]||'').trim(),loc:(cols[idx.loc]||'').trim(),owner:(cols[idx.owner]||'').trim(),dept:(cols[idx.dept]||'').trim(),status:(cols[idx.status]||'正常').trim(),date:(cols[idx.date]||null),price:(cols[idx.price]||null),model:(cols[idx.model]||null),note:(cols[idx.note]||null),_row:i+2,_err:null};
+    if(!r.id)r._err='编号不能为空';else if(!r.name)r._err='名称不能为空';
+    return r;
+  }).filter(r=>r.id||r.name);
+  const ok=parsedAssets.filter(r=>!r._err).length,err=parsedAssets.filter(r=>r._err).length;
+  document.getElementById('assetOkCount').textContent=`${ok} 条可导入`;
+  const eb=document.getElementById('assetErrCount');
+  if(err>0){eb.style.display='';eb.textContent=`${err} 条有错误`;}else eb.style.display='none';
+  document.getElementById('assetPreviewBody').innerHTML=parsedAssets.map(r=>`<tr class="${r._err?'row-err':'row-ok'}"><td>${r.id||'<span class="err-text">缺失</span>'}</td><td>${r.name||'<span class="err-text">缺失</span>'}</td><td>${r.cat||'—'}</td><td>${r.loc||'—'}</td><td>${r.owner||'—'}</td><td>${r.dept||'—'}</td><td>${r.status}</td><td>${r._err?`<span class="err-text">${r._err}</span>`:r.note||'—'}</td></tr>`).join('');
+  document.getElementById('assetPreview').style.display='block';
+  document.getElementById('assetModeRow').style.display=ok>0?'flex':'none';
+  refreshImportBtn();
+}
+function parseUserRows(header,lines,sep){
+  const idx=buildColIdx(header,USER_COL_MAP);
+  parsedUsers=lines.map((line,i)=>{
+    const cols=parseCsvLine(line,sep);
+    const r={id:'u'+Date.now()+i,username:(cols[idx.username]||'').trim(),name:(cols[idx.name]||'').trim(),password:(cols[idx.password]||'').trim(),role:(cols[idx.role]||'user').trim().toLowerCase(),dept:(cols[idx.dept]||'').trim(),_row:i+2,_err:null};
+    if(!r.username)r._err='用户名不能为空';else if(!r.password)r._err='密码不能为空';
+    if(!['admin','user'].includes(r.role))r.role='user';
+    return r;
+  }).filter(r=>r.username||r.password);
+  const ok=parsedUsers.filter(r=>!r._err).length,err=parsedUsers.filter(r=>r._err).length;
+  document.getElementById('userOkCount').textContent=`${ok} 条可导入`;
+  const eb=document.getElementById('userErrCount');
+  if(err>0){eb.style.display='';eb.textContent=`${err} 条有错误`;}else eb.style.display='none';
+  document.getElementById('userPreviewBody').innerHTML=parsedUsers.map(r=>`<tr class="${r._err?'row-err':'row-ok'}"><td>${r.username}</td><td>${r.name||'—'}</td><td>${r.password?'••••••':'<span class="err-text">缺失</span>'}</td><td>${r.role==='admin'?'管理员':'普通用户'}</td><td>${r.dept||'—'}</td><td>${r._err?`<span class="err-text">${r._err}</span>`:'<span style="color:#15803d">✓</span>'}</td></tr>`).join('');
+  document.getElementById('userPreview').style.display='block';
+  document.getElementById('userModeRow').style.display=ok>0?'flex':'none';
+  refreshImportBtn();
+}
+async function doImport(){
+  const mode=importTab==='assets'
+    ?document.querySelector('input[name="assetMode"]:checked').value
+    :document.querySelector('input[name="userMode"]:checked').value;
+  if(importTab==='assets'){
+    const valid=parsedAssets.filter(r=>!r._err).map(({_row,_err,...r})=>r);
+    if(!valid.length)return;
+    showLoading(`导入 ${valid.length} 条资产…`);
+    try{
+      if(mode==='replace'){
+        if(!confirm(`将清空全部 ${assets.length} 条现有资产后导入，确认吗？`)){hideLoading();return;}
+        // 删除所有（保留约束）
+        await fetch(`${SB_URL}/rest/v1/assets?id=neq.___none___`,{method:'DELETE',headers:SB_HEADERS});
+        await sb.upsert('assets',valid);
+        assets=valid;
+      }else if(mode==='merge'){
+        await sb.upsert('assets',valid);
+        valid.forEach(r=>{const i=assets.findIndex(a=>a.id===r.id);if(i>=0)assets[i]=r;else assets.push(r);});
+      }else{
+        const newOnes=valid.filter(r=>!assets.find(a=>a.id===r.id));
+        if(newOnes.length)await sb.insert('assets',newOnes);
+        newOnes.forEach(r=>assets.push(r));
+        const skipped=valid.length-newOnes.length;
+        if(skipped>0)toast(`${skipped} 条因编号已存在被跳过`,'err');
+      }
+      renderStats();renderFilters();renderTable();renderFpList();
+      toast(`成功导入 ${valid.length} 条资产`);
+    }catch(e){toast('导入失败：'+e.message,'err');}
+    hideLoading();
+  }else{
+    const valid=parsedUsers.filter(r=>!r._err).map(({_row,_err,...r})=>r);
+    if(!valid.length)return;
+    showLoading(`导入 ${valid.length} 条用户…`);
+    try{
+      if(mode==='merge'){
+        await sb.upsert('app_users',valid);
+        valid.forEach(r=>{const i=users.findIndex(u=>u.username===r.username);if(i>=0)users[i]={...users[i],...r};else users.push(r);});
+      }else if(mode==='replace'){
+        if(!confirm('将清空非管理员账户后导入，确认吗？')){hideLoading();return;}
+        await fetch(`${SB_URL}/rest/v1/app_users?id=neq.u1`,{method:'DELETE',headers:SB_HEADERS});
+        const nonAdmin=valid.filter(r=>r.id!=='u1');
+        if(nonAdmin.length)await sb.insert('app_users',nonAdmin);
+        users=[users.find(u=>u.id==='u1'),...nonAdmin];
+      }else{
+        const newOnes=valid.filter(r=>!users.find(u=>u.username===r.username));
+        if(newOnes.length)await sb.insert('app_users',newOnes);
+        newOnes.forEach(r=>users.push(r));
+        const sk=valid.length-newOnes.length;if(sk>0)toast(`${sk} 条用户名已存在被跳过`,'err');
+      }
+      renderUserTable();toast(`成功导入 ${valid.length} 条用户`);
+    }catch(e){toast('导入失败：'+e.message,'err');}
+    hideLoading();
+  }
+  closeImportModal();
+}
 
 /* ════════════════════════════
    导出 CSV
@@ -1271,7 +1429,7 @@ document.getElementById('userModalOverlay').addEventListener('click',e=>{if(e.ta
 function exportCSV(){
   const headers=['资产编号','名称','类别','位置','所属人','所属部门','状态','购入日期','金额(元)','品牌型号','已标注','备注'];
   const rows=assets.map(a=>{
-    const hp=pins.some(p=>p.assetId===a.id)?'是':'否';
+    const hp=pins.some(p=>p.asset_id===a.id)?'是':'否';
     return [a.id,a.name,a.cat,a.loc,a.owner,a.dept,a.status,a.date,a.price,a.model,hp,a.note]
       .map(v=>`"${(v||'').replace(/"/g,'""')}"`)
       .join(',');
@@ -1284,282 +1442,13 @@ function exportCSV(){
 }
 
 /* ════════════════════════════
-   批量导入
-════════════════════════════ */
-let importTab='assets';       // 当前子标签
-let parsedAssets=[];          // 解析出的资产行
-let parsedUsers=[];           // 解析出的用户行
-
-/* 模板定义 */
-const ASSET_HEADERS=['资产编号','名称','类别','位置','所属人','所属部门','状态','购入日期','金额(元)','品牌型号','备注'];
-const ASSET_SAMPLE =[
-  ['AST-011','示例椅子','家具','3楼会议室','张三','行政部','正常','2024-01-10','500','',''],
-  ['AST-012','示例打印机','办公设备','5楼财务室','李四','财务部','正常','2024-03-20','2000','惠普','彩色打印'],
-];
-const USER_HEADERS=['用户名','姓名','密码','角色(admin/user)','部门'];
-const USER_SAMPLE =[
-  ['zhangsan','张三','pass123','user','行政部'],
-  ['lisi','李四','pass456','admin','财务部'],
-];
-
-function openImportModal(tab){
-  importTab=tab||'assets';
-  switchImportTab(importTab);
-  resetImportPanel('assets');
-  resetImportPanel('users');
-  document.getElementById('importModalOverlay').classList.add('show');
-}
-function closeImportModal(){
-  document.getElementById('importModalOverlay').classList.remove('show');
-}
-document.getElementById('importModalOverlay').addEventListener('click',e=>{
-  if(e.target===document.getElementById('importModalOverlay'))closeImportModal();
-});
-function switchImportTab(tab){
-  importTab=tab;
-  ['assets','users'].forEach(t=>{
-    document.getElementById('itab-'+t).classList.toggle('active',t===tab);
-    document.getElementById('ipanel-'+t).classList.toggle('active',t===tab);
-  });
-  refreshImportBtn();
-}
-function resetImportPanel(type){
-  if(type==='assets'){parsedAssets=[];document.getElementById('assetPreview').style.display='none';document.getElementById('assetModeRow').style.display='none';document.getElementById('assetFileInput').value='';}
-  else{parsedUsers=[];document.getElementById('userPreview').style.display='none';document.getElementById('userModeRow').style.display='none';document.getElementById('userFileInput').value='';}
-  refreshImportBtn();
-}
-function refreshImportBtn(){
-  const ok=(importTab==='assets'?parsedAssets:parsedUsers).filter(r=>!r._err).length>0;
-  document.getElementById('btnDoImport').disabled=!ok;
-}
-
-/* ── 模板下载 ── */
-function downloadTpl(type,fmt){
-  const sep=fmt==='tsv'?'\t':',';
-  const q=fmt==='tsv'?v=>v:v=>`"${v}"`;
-  let rows,name;
-  if(type==='assets'){
-    rows=[ASSET_HEADERS.map(q).join(sep),...ASSET_SAMPLE.map(r=>r.map(q).join(sep))];
-    name='资产导入模板';
-  }else{
-    rows=[USER_HEADERS.map(q).join(sep),...USER_SAMPLE.map(r=>r.map(q).join(sep))];
-    name='用户导入模板';
-  }
-  const mime=fmt==='tsv'?'text/tab-separated-values':'text/csv';
-  const blob=new Blob(['\uFEFF'+rows.join('\n')],{type:mime});
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement('a');a.href=url;a.download=`${name}.${fmt}`;a.click();URL.revokeObjectURL(url);
-}
-
-/* ── 文件读取 ── */
-function handleImportDrop(e,type){e.preventDefault();const f=e.dataTransfer.files[0];if(f)parseImportFile(f,type);}
-function handleImportFile(e,type){if(e.target.files[0])parseImportFile(e.target.files[0],type);}
-function parseImportFile(file,type){
-  const reader=new FileReader();
-  reader.onload=e=>{
-    // 处理 BOM
-    let text=e.target.result.replace(/^\uFEFF/,'');
-    const sep=text.includes('\t')?'\t':',';
-    const lines=text.split(/\r?\n/).filter(l=>l.trim());
-    if(lines.length<2){alert('文件内容为空或缺少数据行');return;}
-    const header=parseCsvLine(lines[0],sep).map(h=>h.trim());
-    const dataLines=lines.slice(1);
-    if(type==='assets')parseAssetRows(header,dataLines,sep);
-    else parseUserRows(header,dataLines,sep);
-  };
-  reader.readAsText(file,'UTF-8');
-}
-
-/* ── CSV 行解析（处理引号） ── */
-function parseCsvLine(line,sep){
-  if(sep==='\t')return line.split('\t').map(v=>v.trim());
-  const result=[];let cur='',inQ=false;
-  for(let i=0;i<line.length;i++){
-    const c=line[i];
-    if(c==='"'){if(inQ&&line[i+1]==='"'){cur+='"';i++;}else inQ=!inQ;}
-    else if(c===sep&&!inQ){result.push(cur.trim());cur='';}
-    else cur+=c;
-  }
-  result.push(cur.trim());
-  return result;
-}
-
-/* ── 字段映射（兼容中英文列名） ── */
-const ASSET_COL_MAP={
-  '资产编号':'id','编号':'id','id':'id','asset_id':'id',
-  '名称':'name','资产名称':'name','name':'name',
-  '类别':'cat','分类':'cat','category':'cat',
-  '位置':'loc','地点':'loc','location':'loc',
-  '所属人':'owner','负责人':'owner','owner':'owner',
-  '所属部门':'dept','部门':'dept','department':'dept',
-  '状态':'status','status':'status',
-  '购入日期':'date','日期':'date','date':'date',
-  '金额':'price','金额(元)':'price','价格':'price','price':'price',
-  '品牌型号':'model','品牌':'model','型号':'model','model':'model',
-  '备注':'note','note':'note',
-};
-const USER_COL_MAP={
-  '用户名':'username','username':'username','loginname':'username',
-  '姓名':'name','name':'name','真实姓名':'name',
-  '密码':'password','password':'password','pass':'password',
-  '角色':'role','角色(admin/user)':'role','role':'role',
-  '部门':'dept','department':'dept',
-};
-
-function buildColIdx(header,map){
-  const idx={};
-  header.forEach((h,i)=>{const key=(map[h]||map[h.toLowerCase()]);if(key)idx[key]=i;});
-  return idx;
-}
-
-function parseAssetRows(header,lines,sep){
-  const idx=buildColIdx(header,ASSET_COL_MAP);
-  parsedAssets=lines.map((line,i)=>{
-    const cols=parseCsvLine(line,sep);
-    const r={
-      id:(cols[idx.id]||'').trim(),
-      name:(cols[idx.name]||'').trim(),
-      cat:(cols[idx.cat]||'').trim(),
-      loc:(cols[idx.loc]||'').trim(),
-      owner:(cols[idx.owner]||'').trim(),
-      dept:(cols[idx.dept]||'').trim(),
-      status:(cols[idx.status]||'正常').trim(),
-      date:(cols[idx.date]||'').trim(),
-      price:(cols[idx.price]||'').trim(),
-      model:(cols[idx.model]||'').trim(),
-      note:(cols[idx.note]||'').trim(),
-      _row:i+2,_err:null,
-    };
-    if(!r.id)r._err='资产编号不能为空';
-    else if(!r.name)r._err='名称不能为空';
-    else if(!['正常','维修中','已报废',''].includes(r.status))r.status='正常';
-    return r;
-  }).filter(r=>r.id||r.name); // 过滤空行
-
-  renderAssetPreview();
-}
-function parseUserRows(header,lines,sep){
-  const idx=buildColIdx(header,USER_COL_MAP);
-  parsedUsers=lines.map((line,i)=>{
-    const cols=parseCsvLine(line,sep);
-    const r={
-      id:'u'+Date.now()+i,
-      username:(cols[idx.username]||'').trim(),
-      name:(cols[idx.name]||'').trim(),
-      password:(cols[idx.password]||'').trim(),
-      role:(cols[idx.role]||'user').trim().toLowerCase(),
-      dept:(cols[idx.dept]||'').trim(),
-      _row:i+2,_err:null,
-    };
-    if(!r.username)r._err='用户名不能为空';
-    else if(!r.password)r._err='密码不能为空';
-    else if(!['admin','user'].includes(r.role)){r.role='user';}
-    return r;
-  }).filter(r=>r.username||r.password);
-
-  renderUserPreview();
-}
-
-function renderAssetPreview(){
-  const ok=parsedAssets.filter(r=>!r._err).length;
-  const err=parsedAssets.filter(r=>r._err).length;
-  document.getElementById('assetOkCount').textContent=`${ok} 条可导入`;
-  const errBadge=document.getElementById('assetErrCount');
-  if(err>0){errBadge.style.display='';errBadge.textContent=`${err} 条有错误`;}
-  else errBadge.style.display='none';
-  document.getElementById('assetPreviewBody').innerHTML=parsedAssets.map(r=>`
-    <tr class="${r._err?'row-err':'row-ok'}">
-      <td>${r.id||'<span class="err-text">缺失</span>'}</td>
-      <td>${r.name||'<span class="err-text">缺失</span>'}</td>
-      <td>${r.cat||'—'}</td><td>${r.loc||'—'}</td>
-      <td>${r.owner||'—'}</td><td>${r.dept||'—'}</td>
-      <td>${r.status||'—'}</td><td>${r.date||'—'}</td>
-      <td>${r._err?`<span class="err-text">${r._err}</span>`:r.note||'—'}</td>
-    </tr>`).join('');
-  document.getElementById('assetPreview').style.display='block';
-  document.getElementById('assetModeRow').style.display=ok>0?'flex':'none';
-  refreshImportBtn();
-}
-function renderUserPreview(){
-  const ok=parsedUsers.filter(r=>!r._err).length;
-  const err=parsedUsers.filter(r=>r._err).length;
-  document.getElementById('userOkCount').textContent=`${ok} 条可导入`;
-  const errBadge=document.getElementById('userErrCount');
-  if(err>0){errBadge.style.display='';errBadge.textContent=`${err} 条有错误`;}
-  else errBadge.style.display='none';
-  document.getElementById('userPreviewBody').innerHTML=parsedUsers.map(r=>`
-    <tr class="${r._err?'row-err':'row-ok'}">
-      <td>${r.username||'<span class="err-text">缺失</span>'}</td>
-      <td>${r.name||'—'}</td>
-      <td>${r.password?'••••••':'<span class="err-text">缺失</span>'}</td>
-      <td>${r.role==='admin'?'管理员':'普通用户'}</td>
-      <td>${r.dept||'—'}</td>
-      <td>${r._err?`<span class="err-text">${r._err}</span>`:'<span style="color:#15803d">✓</span>'}</td>
-    </tr>`).join('');
-  document.getElementById('userPreview').style.display='block';
-  document.getElementById('userModeRow').style.display=ok>0?'flex':'none';
-  refreshImportBtn();
-}
-
-/* ── 执行导入 ── */
-function doImport(){
-  if(importTab==='assets'){
-    const mode=document.querySelector('input[name="assetMode"]:checked').value;
-    const validRows=parsedAssets.filter(r=>!r._err);
-    if(mode==='replace'){
-      if(!confirm(`将清空全部 ${assets.length} 条现有资产，导入 ${validRows.length} 条新数据，确认吗？`))return;
-      assets=validRows.map(({_row,_err,...r})=>r);
-    }else if(mode==='merge'){
-      validRows.forEach(({_row,_err,...r})=>{
-        const i=assets.findIndex(a=>a.id===r.id);
-        if(i>=0)assets[i]=r;else assets.push(r);
-      });
-    }else{
-      // append：跳过已存在编号
-      let skip=0;
-      validRows.forEach(({_row,_err,...r})=>{
-        if(assets.find(a=>a.id===r.id)){skip++;return;}
-        assets.push(r);
-      });
-      if(skip>0)alert(`${skip} 条记录因资产编号已存在被跳过（请改用"合并"模式覆盖）`);
-    }
-    saveAssets();renderStats();renderFilters();renderTable();
-    alert(`资产导入完成，共导入 ${validRows.length} 条`);
-  }else{
-    const mode=document.querySelector('input[name="userMode"]:checked').value;
-    const validRows=parsedUsers.filter(r=>!r._err);
-    if(mode==='replace'){
-      if(!confirm(`将清空全部用户（管理员账户u1保留），导入 ${validRows.length} 条新数据，确认吗？`))return;
-      users=users.filter(u=>u.id==='u1');
-      validRows.forEach(({_row,_err,...r})=>{r.id='u'+Date.now()+Math.random();users.push(r);});
-    }else if(mode==='merge'){
-      validRows.forEach(({_row,_err,...r})=>{
-        const i=users.findIndex(u=>u.username===r.username);
-        if(i>=0){r.id=users[i].id;users[i]=r;}else users.push(r);
-      });
-    }else{
-      let skip=0;
-      validRows.forEach(({_row,_err,...r})=>{
-        if(users.find(u=>u.username===r.username)){skip++;return;}
-        users.push(r);
-      });
-      if(skip>0)alert(`${skip} 条记录因用户名已存在被跳过`);
-    }
-    saveUsers();renderUserTable();
-    alert(`用户导入完成，共导入 ${validRows.length} 条`);
-  }
-  closeImportModal();
-}
-
-/* ════════════════════════════
    初始化
 ════════════════════════════ */
 window.addEventListener('resize',()=>{
   if(floorBitmap&&document.getElementById('panel-floorplan').classList.contains('active'))fpResetView();
 });
-loadData();
 setupCanvasEvents();
-if(currentUser)enterMain();
+initApp();
 </script>
 </body>
 </html>
