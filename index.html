@@ -1341,7 +1341,10 @@ function parseAssetRows(header,lines,sep){
   document.getElementById('assetOkCount').textContent=`${ok} 条可导入`;
   const eb=document.getElementById('assetErrCount');
   if(err>0){eb.style.display='';eb.textContent=`${err} 条有错误`;}else eb.style.display='none';
-  document.getElementById('assetPreviewBody').innerHTML=parsedAssets.map(r=>`<tr class="${r._err?'row-err':'row-ok'}"><td>${r.id||'<span class="err-text">缺失</span>'}</td><td>${r.name||'<span class="err-text">缺失</span>'}</td><td>${r.cat||'—'}</td><td>${r.loc||'—'}</td><td>${r.owner||'—'}</td><td>${r.dept||'—'}</td><td>${r.status}</td><td>${r._err?`<span class="err-text">${r._err}</span>`:r.note||'—'}</td></tr>`).join('');
+  document.getElementById('assetPreviewBody').innerHTML=parsedAssets.map(r=>{
+    var errCell=r._err?('<span class="err-text">'+r._err+'</span>'):(r.note||'—');
+    return '<tr class="'+(r._err?'row-err':'row-ok')+'"><td>'+(r.id||'<span class="err-text">缺失</span>')+'</td><td>'+(r.name||'<span class="err-text">缺失</span>')+'</td><td>'+(r.cat||'—')+'</td><td>'+(r.loc||'—')+'</td><td>'+(r.owner||'—')+'</td><td>'+(r.dept||'—')+'</td><td>'+(r.status||'—')+'</td><td>'+errCell+'</td></tr>';
+  }).join('');
   document.getElementById('assetPreview').style.display='block';
   document.getElementById('assetModeRow').style.display=ok>0?'flex':'none';
   refreshImportBtn();
@@ -1359,7 +1362,11 @@ function parseUserRows(header,lines,sep){
   document.getElementById('userOkCount').textContent=`${ok} 条可导入`;
   const eb=document.getElementById('userErrCount');
   if(err>0){eb.style.display='';eb.textContent=`${err} 条有错误`;}else eb.style.display='none';
-  document.getElementById('userPreviewBody').innerHTML=parsedUsers.map(r=>`<tr class="${r._err?'row-err':'row-ok'}"><td>${r.username}</td><td>${r.name||'—'}</td><td>${r.password?'••••••':'<span class="err-text">缺失</span>'}</td><td>${r.role==='admin'?'管理员':'普通用户'}</td><td>${r.dept||'—'}</td><td>${r._err?`<span class="err-text">${r._err}</span>`:'<span style="color:#15803d">✓</span>'}</td></tr>`).join('');
+  document.getElementById('userPreviewBody').innerHTML=parsedUsers.map(r=>{
+    var statusCell=r._err?('<span class="err-text">'+r._err+'</span>'):'<span style="color:#15803d">✓</span>';
+    var pwCell=r.password?'••••••':'<span class="err-text">缺失</span>';
+    return '<tr class="'+(r._err?'row-err':'row-ok')+'"><td>'+r.username+'</td><td>'+(r.name||'—')+'</td><td>'+pwCell+'</td><td>'+(r.role==='admin'?'管理员':'普通用户')+'</td><td>'+(r.dept||'—')+'</td><td>'+statusCell+'</td></tr>';
+  }).join('');
   document.getElementById('userPreview').style.display='block';
   document.getElementById('userModeRow').style.display=ok>0?'flex':'none';
   refreshImportBtn();
