@@ -948,16 +948,33 @@ if(typeof pdfjsLib!=='undefined'){
 }
 function handleFileSelect(e){if(e.target.files[0])loadFloorFile(e.target.files[0]);}
 function handleFileDrop(e){e.preventDefault();if(e.dataTransfer.files[0])loadFloorFile(e.dataTransfer.files[0]);}
+
 async function loadFloorFile(file){
-  showLoading('正在渲染平面图…');
+  showLoading('正在处理平面图…');
   try{
-    if(file.type==='application/pdf'||file.name.toLowerCase().endsWith('.pdf')) await loadPdfFile(file);
-    else if(file.type.startsWith('image/')) await loadImgFile(file);
-    else{alert('请上传 PDF 或图片文件');hideLoading();return;}
-  }catch(err){alert('文件加载失败：'+err.message);}
+    // 第一步：本地渲染成 canvas（PDF转图片 or 直接图片）
+    let dataUrl;
+    if(file.type==='application/pdf'||file.name.toLowerCase().endsWith('.pdf')){
+      dataUrl=await renderPdfToDataUrl(file);
+    }else if(file.type.startsWith('image/')){
+      dataUrl=await fileToDataUrl(file);
+    }else{
+      alert('请上传 PDF 或图片文件（JPG/PNG）');hideLoading();return;
+    }
+    // 第二步：上传到 Supabase Storage
+    showLoading('正在上传到云端，所有设备可同步查看…');
+    await uploadFloorPlanToStorage(dataUrl);
+    // 第三步：渲染到画布
+    await loadFloorBitmapFromDataUrl(dataUrl);
+    showFpMain();
+  }catch(err){
+    alert('平面图处理失败：'+err.message);
+    console.error(err);
+  }
   hideLoading();
 }
-async function loadPdfFile(file){
+
+async function renderPdfToDataUrl(file){
   const buf=await file.arrayBuffer();
   const pdf=await pdfjsLib.getDocument({data:buf}).promise;
   const pg=await pdf.getPage(1);
@@ -965,35 +982,114 @@ async function loadPdfFile(file){
   const oc=document.createElement('canvas');
   oc.width=vp.width;oc.height=vp.height;
   await pg.render({canvasContext:oc.getContext('2d'),viewport:vp}).promise;
-  floorBitmap=await createImageBitmap(oc);
-  try{localStorage.setItem(FKEY,oc.toDataURL('image/jpeg',0.82));}catch(e){}
-  showFpMain();
+  return oc.toDataURL('image/jpeg',0.85);
 }
-async function loadImgFile(file){
+
+function fileToDataUrl(file){
   return new Promise((res,rej)=>{
     const reader=new FileReader();
-    reader.onload=async e=>{
-      const img=new Image();
-      img.onload=async()=>{floorBitmap=await createImageBitmap(img);try{localStorage.setItem(FKEY,e.target.result);}catch(ex){}showFpMain();res();};
-      img.onerror=rej;img.src=e.target.result;
-    };
-    reader.onerror=rej;reader.readAsDataURL(file);
+    reader.onload=e=>res(e.target.result);
+    reader.onerror=rej;
+    reader.readAsDataURL(file);
   });
 }
-async function restoreFloorPlan(){
-  try{const data=localStorage.getItem(FKEY);if(!data)return;const img=new Image();img.onload=async()=>{floorBitmap=await createImageBitmap(img);if(document.getElementById('fpMain'))showFpMain();};img.src=data;}catch(e){}
+
+async function loadFloorBitmapFromDataUrl(dataUrl){
+  return new Promise((res,rej)=>{
+    const img=new Image();
+    img.onload=async()=>{floorBitmap=await createImageBitmap(img);res();};
+    img.onerror=rej;
+    img.src=dataUrl;
+  });
 }
+
+// 上传 dataUrl 到 Supabase Storage
+async function uploadFloorPlanToStorage(dataUrl){
+  // dataUrl 转 Blob
+  const res=await fetch(dataUrl);
+  const blob=await res.blob();
+  const ext=blob.type.includes('png')?'png':'jpg';
+  const fileName='floorplan.'+ext;
+  // 上传（upsert 覆盖旧文件）
+  const uploadRes=await fetch(
+    SB_URL+'/storage/v1/object/floorplan/'+fileName,
+    {
+      method:'POST',
+      headers:{
+        'apikey':SB_KEY,
+        'Authorization':'Bearer '+SB_KEY,
+        'Content-Type':blob.type,
+        'x-upsert':'true',
+      },
+      body:blob,
+    }
+  );
+  if(!uploadRes.ok){
+    const errText=await uploadRes.text();
+    throw new Error('Storage上传失败: '+errText);
+  }
+  console.log('平面图已上传到 Supabase Storage');
+}
+
+// 从 Supabase Storage 恢复平面图（所有设备共享）
+async function restoreFloorPlan(){
+  // 优先从 Supabase Storage 加载
+  const extensions=['jpg','png'];
+  for(const ext of extensions){
+    const url=SB_URL+'/storage/v1/object/public/floorplan/floorplan.'+ext+'?t='+Date.now();
+    try{
+      const testRes=await fetch(url,{method:'HEAD'});
+      if(testRes.ok){
+        await loadFloorBitmapFromUrl(url);
+        showFpMain();
+        return;
+      }
+    }catch(e){}
+  }
+  // 降级：从 localStorage 读取（兼容旧版本）
+  try{
+    const data=localStorage.getItem(FKEY);
+    if(!data)return;
+    await loadFloorBitmapFromDataUrl(data);
+    if(document.getElementById('fpMain'))showFpMain();
+  }catch(e){}
+}
+
+async function loadFloorBitmapFromUrl(url){
+  return new Promise((res,rej)=>{
+    const img=new Image();
+    img.crossOrigin='anonymous';
+    img.onload=async()=>{floorBitmap=await createImageBitmap(img);res();};
+    img.onerror=()=>rej(new Error('图片加载失败: '+url));
+    img.src=url;
+  });
+}
+
 function showFpMain(){
   document.getElementById('fpUpload').style.display='none';
   document.getElementById('fpMain').style.display='block';
   fpResetView();renderFpList();
 }
-function clearFloorPlan(){
-  if(!confirm('确认更换图纸？'))return;
-  floorBitmap=null;try{localStorage.removeItem(FKEY);}catch(e){}
+
+async function clearFloorPlan(){
+  if(!confirm('确认更换图纸？当前图纸将从云端删除。'))return;
+  showLoading('删除中…');
+  // 尝试删除 Storage 里的文件
+  for(const ext of ['jpg','png']){
+    try{
+      await fetch(SB_URL+'/storage/v1/object/floorplan/floorplan.'+ext,{
+        method:'DELETE',
+        headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY}
+      });
+    }catch(e){}
+  }
+  floorBitmap=null;
+  try{localStorage.removeItem(FKEY);}catch(e){}
   document.getElementById('fpUpload').style.display='';
   document.getElementById('fpMain').style.display='none';
   document.getElementById('pdfInput').value='';
+  hideLoading();
+  toast('图纸已删除');
 }
 
 /* ════════════════════════════
