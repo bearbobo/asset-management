@@ -1148,10 +1148,7 @@ function renderFpList(){
       <span class="fp-aname" title="${a.name}">${a.name}</span>
       <span class="fp-aid">${a.id}</span>
       ${isTagged?'<span class="fp-tagged-badge">已标注</span>':''}
-      ${isAdmin?`<button class="fp-tag-btn${isPlacing?' active-placing':''}"
-        onclick="${isPlacing?'cancelPlaceMode()':``startPlacing('${a.id}',false)``}">
-        ${isPlacing?'取消':'📍'}
-      </button>`:''}
+      ${isAdmin?'<button class="fp-tag-btn'+(isPlacing?' active-placing':'')+'" onclick="'+(isPlacing?'cancelPlaceMode()':'startPlacing(\''+a.id+'\',false)')+'">'+( isPlacing?'取消':'📍')+'</button>':''}
     </div>`;
   }).join('');
 }
