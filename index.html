@@ -639,6 +639,11 @@ function saveSession(){try{localStorage.setItem(SKEY,currentUser?JSON.stringify(
 /* ════════════════════════════
    初始化：从数据库加载数据
 ════════════════════════════ */
+// 内置兜底账户，数据库连不上时仍可登录
+const FALLBACK_USERS=[
+  {id:'u1',username:'admin',password:'admin123',name:'系统管理员',role:'admin',dept:'行政部'},
+];
+
 async function initApp(){
   showLoading('正在连接数据库…');
   try{
@@ -647,6 +652,8 @@ async function initApp(){
       sb.select('app_users'),
       sb.select('pins'),
     ]);
+    // 数据库里还没有用户时（建表后首次访问），用兜底账户
+    if(!users||users.length===0) users=FALLBACK_USERS;
     setDbStatus(true);
 
     // 恢复会话
@@ -657,14 +664,16 @@ async function initApp(){
 
     hideLoading();
     if(currentUser) enterMain();
-    else restoreFloorPlan(); // 预加载平面图缓存
+    else restoreFloorPlan();
 
   }catch(err){
     setDbStatus(false);
     hideLoading();
-    // 数据库连接失败时仍可查看本地缓存（降级处理）
-    toast('数据库连接失败，请检查网络','err');
-    console.error(err);
+    // 数据库连不上时，用兜底账户，资产数据为空
+    users = FALLBACK_USERS;
+    assets = []; pins = [];
+    toast('数据库连接失败，已切换离线模式（仅限管理员登录）','err');
+    console.error('Supabase连接失败:', err.message);
   }
 }
 
